@@ -41,4 +41,6 @@ window.onload = function(){
   $('#MenuShow').sidr({
     name: 'MenuList'
   });
+  
+  document.oncontextmenu=new Function("$('#MenuShow').click();event.returnValue=false;");
 }
