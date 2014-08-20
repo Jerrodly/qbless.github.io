@@ -11,11 +11,11 @@ document.write('<div id="MenuList" style="display: none;"><ul><li><a href="/">Ho
 
 
 //LOAD JQUERY
-var z = document.createElement('script');
-z.setAttribute("type", "text/javascript");
-z.setAttribute("charset", "utf-8");
-z.setAttribute("src", "http://code.jquery.com/jquery-2.1.1.min.js");
-document.getElementsByTagName("head")[0].appendChild(z);
+//var z = document.createElement('script');
+//z.setAttribute("type", "text/javascript");
+//z.setAttribute("charset", "utf-8");
+//z.setAttribute("src", "http://code.jquery.com/jquery-2.1.1.min.js");
+//document.getElementsByTagName("head")[0].appendChild(z);
 
 
 
