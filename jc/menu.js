@@ -2,7 +2,7 @@ document.write('/<img id="MenuShow" src="http://www.iconpng.com/png/windows8_ico
 
 document.write('\
   <div id="MenuList" style="display: none;"><ul>\
-  <li><a href="/">Home</a></li>\
+  <li><a href="/#">Home</a></li>\
   <li><a href="/#clutter">clutter</a></li>\
   <li><a href="/#php">php</a></li>\
   <li><a href="/#nginx">nginx</a></li>\
@@ -58,7 +58,7 @@ window.onload = function(){
       }
     }
     
-    if (window.location.href.indexOf('/#') > 0) {
+    if (window.location.href.indexOf('/#') > 0 && window.location.href.split("#")[1]) {
       ArticleCategory(window.location.href.split("#")[1]);
     }
   }
