@@ -3,6 +3,9 @@ document.write('/<img id="MenuShow" src="http://www.iconpng.com/png/windows8_ico
 document.write('\
   <div id="MenuList" style="display: none;"><ul>\
   <li><a href="/">Home</a></li>\
+  <li><a href="/#clutter">clutter</a></li>\
+  <li><a href="/#php">php</a></li>\
+  <li><a href="/#nginx">nginx</a></li>\
   <li><a href="/#windows">windows</a></li>\
   </ul></div>\
 ');
