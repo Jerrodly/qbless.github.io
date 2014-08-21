@@ -57,9 +57,7 @@ window.onload = function(){
   if (window.location.href == 'http://qbless.github.io/' || window.location.href.indexOf('/#') > 0) {
     for (var i=0; i<$('a').length; i++) {
       var _a = $('a')[i];
-      if (_a.href.split("#")[1]) { $(_a).attr("onclick", "ArticleCategory('"+_a.href.split("#")[1]+"')");
-         console.log(_a)
-      }
+      $(_a).attr("onclick", "ArticleCategory('"+_a.href.split("#")[1]+"')");
     }
     
     if (window.location.href.indexOf('/#') > 0) {
