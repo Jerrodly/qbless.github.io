@@ -58,8 +58,12 @@ window.onload = function(){
       }
     }
     
-    if (window.location.href.indexOf('/#') > 0 && window.location.href.split("#")[1]) {
-      ArticleCategory(window.location.href.split("#")[1]);
+    if (window.location.href.indexOf('/#') > 0) {
+      if (window.location.href.split("#")[1]) {
+        ArticleCategory(window.location.href.split("#")[1]);
+      } else {
+        $('body').children('ul').children('li').show();
+      }
     }
   }
 }
