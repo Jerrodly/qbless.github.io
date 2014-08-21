@@ -57,7 +57,7 @@ window.onload = function(){
   if (window.location.href.split("/").length == 4 || window.location.href.indexOf('/#') > 0) {
     for (var i=0; i<$('a').length; i++) {
       var _a = $('a')[i];
-      if (_a.href.indexOf('/#')) {
+      if (_a.href.indexOf('/#') > 0) {
         $(_a).attr("onclick", "ArticleCategory('"+_a.href.split("#")[1]+"')");
       }
     }
