@@ -29,13 +29,17 @@ document.getElementsByTagName("body")[0].appendChild(z);
 
 
 function ArticleCategory(cate) {
-  $('body').children('ul').children('li').hide();
-
-  var articles = $('body').children('ul').children('li');
-  for (var i=0; i<articles.length; i++) {
-    if ($(articles[i]).html().indexOf(cate)>0) {
-      $(articles[i]).show();
+  if (cate) {
+    $('body').children('ul').children('li').hide();
+  
+    var articles = $('body').children('ul').children('li');
+    for (var i=0; i<articles.length; i++) {
+      if ($(articles[i]).html().indexOf(cate)>0) {
+        $(articles[i]).show();
+      }
     }
+  } else {
+    $('body').children('ul').children('li').show();
   }
   
   return false;
@@ -59,11 +63,7 @@ window.onload = function(){
     }
     
     if (window.location.href.indexOf('/#') > 0) {
-      if (window.location.href.split("#")[1]) {
-        ArticleCategory(window.location.href.split("#")[1]);
-      } else {
-        $('body').children('ul').children('li').show();
-      }
+      ArticleCategory(window.location.href.split("#")[1]);
     }
   }
 }
