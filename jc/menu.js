@@ -35,7 +35,7 @@ window.onload = function(){
 
 
   if (window.location.href == 'http://qbless.github.io/' || window.location.href.indexOf('/#') > 0) {
-    var ArticleCategory = function(cate) {
+    function ArticleCategory(cate) {
       $('body').children('ul').children('li').hide();
 
       var articles = $('body').children('ul').children('li');
