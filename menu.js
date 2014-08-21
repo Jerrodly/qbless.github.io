@@ -43,4 +43,29 @@ window.onload = function(){
   });
   
   document.oncontextmenu=new Function("$('#MenuShow').click();event.returnValue=false;");
+
+
+  if (window.location.href == 'http://qbless.github.io/') {
+    for (var i=0; i<$('a').length; i++) {
+      var _a = $('a')[i];
+      if (_a.href.split("#")[1]) {
+        $(_a).unbind('click').bind('click', function(){
+          ArticleCategory(_a.href.split("#")[1]);
+        });
+      }
+    }
+
+    var ArticleCategory = function(cate) {
+      $('body').children('ul').children('li').hide();
+
+      var articles = $('body').children('ul').children('li');
+      for (var i=0; i<articles.length; i++) {
+        if ($(articles[i]).html().indexOf(cate)>0) {
+          $(articles[i]).show();
+        }
+      }
+      
+      return false;
+    }
+  }
 }
