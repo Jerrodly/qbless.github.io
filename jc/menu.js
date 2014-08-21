@@ -4,8 +4,8 @@ document.write('\
   <div id="MenuList" style="display: none;"><ul>\
   <li><a href="/">Home</a></li>\
   <li><a href="/#windows">windows</a></li>\
-  </ul></div>'\
-);
+  </ul></div>\
+');
 
 
 //LOAD SIDR
