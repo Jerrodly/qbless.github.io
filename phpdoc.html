@@ -5,16 +5,12 @@
 </head>
 <body marginheight="0">
 <h1><a href="/#php">[php]</a> PHP Documentor</h1>
-<h2>STEP</h2>
-<ol>
-<li>下载最新版本(phpDocumentor-1.5.0a1 2012-09-01)</li>
-</ol>
+<h2>Step</h2>
+<h5>0.下载最新版本(phpDocumentor-1.5.0a1 2012-09-01)</h5>
 <p><a href="http://sourceforge.net/projects/phpdocu/files/">http://sourceforge.net/projects/phpdocu/files/</a>
 
 </p>
-<ol>
-<li>解压后。打开phpdoc.bat</li>
-</ol>
+<h5>1.解压后。打开phpdoc.bat</h5>
 <p>line:16
 </p>
 <pre><code>SET phpCli=C:\usr\local\php\cli\php.exe
@@ -23,16 +19,14 @@ SET phpCli=D:\Develop\php\5.3.27\php.exe</code></pre>
 <p>php路径修改为本机正确路径
 
 </p>
-<ol>
-<li><p>替换目录下的</p>
+<h5>2.替换目录下的</h5>
 <pre><code>iso-8859-1
 -&gt;
 utf-8</code></pre>
-<p>否则会出现乱码</p>
-</li>
-<li><p>执行生成命令</p>
-</li>
-</ol>
+<p>否则会出现乱码
+
+</p>
+<h5>3.执行生成命令</h5>
 <p>生成HTML文档：
 </p>
 <pre><code>phpdoc -d "D:\Website\jia.91.com\trunk\webapps\loupan" -t "D:\Website\jia.91.com\doc\loupan"</code></pre>
@@ -42,9 +36,7 @@ utf-8</code></pre>
 <p>生成PDF文档：
 </p>
 <pre><code>phpdoc -d "D:\Website\jia.91.com\trunk\webapps\loupan" -t "D:\Website\jia.91.com\doc\loupan" -o "PDF:default:default"</code></pre>
-<ol>
-<li>生成的CHM为源码。需要下载 Microsoft HTML Help Workshop 进行打包</li>
-</ol>
+<h5>4.生成的CHM为源码。需要下载 Microsoft HTML Help Workshop 进行打包</h5>
 <p><a href="http://msdn.microsoft.com/en-us/library/ms669985.aspx">http://msdn.microsoft.com/en-us/library/ms669985.aspx</a>
 
 
