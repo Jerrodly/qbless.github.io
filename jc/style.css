@@ -19,7 +19,7 @@ body{
   line-height:1.5em;
   background:#fefefe;
   /*width: 45em;*/
-  margin: 10px auto;
+  margin: auto;/*margin: 10px auto;*/
   padding: 30px;
   /*border: 1px solid #ddd;*/
   outline: 1300px solid #f8f8f8;
