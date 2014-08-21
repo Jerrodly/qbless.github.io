@@ -45,16 +45,7 @@ window.onload = function(){
   document.oncontextmenu=new Function("$('#MenuShow').click();event.returnValue=false;");
 
 
-  if (window.location.href == 'http://qbless.github.io/' || window.location.href.indexOf('#') > 0) {
-    for (var i=0; i<$('a').length; i++) {
-      var _a = $('a')[i];
-      if (_a.href.split("#")[1]) {
-        $(_a).unbind('click').bind('click', function(){
-          ArticleCategory(_a.href.split("#")[1]);
-        });
-      }
-    }
-
+  if (window.location.href == 'http://qbless.github.io/' || window.location.href.indexOf('/#') > 0) {
     var ArticleCategory = function(cate) {
       $('body').children('ul').children('li').hide();
 
@@ -66,6 +57,19 @@ window.onload = function(){
       }
       
       return false;
+    }
+    
+    for (var i=0; i<$('a').length; i++) {
+      var _a = $('a')[i];
+      if (_a.href.split("#")[1]) {
+        $(_a).unbind('click').bind('click', function(){
+          ArticleCategory(_a.href.split("#")[1]);
+        });
+      }
+    }
+    
+    if (window.location.href.indexOf('/#') > 0) {
+      ArticleCategory(window.location.href.split("#")[1]);
     }
   }
 }
