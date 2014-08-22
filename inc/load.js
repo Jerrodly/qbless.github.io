@@ -42,7 +42,7 @@ $("body").append('\
   <li><a href="/#">Home</a></li>\
   <li><a href="/#clutter">clutter</a></li>\
   <li><a href="/#php">php</a></li>\
-  <li><a href="/#nginx">nginx</a></li>\
+  <li><a href="/#linux">linux</a></li>\
   <li><a href="/#windows">windows</a></li>\
   </ul></div>\
 ');
