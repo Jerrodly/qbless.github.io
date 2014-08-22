@@ -15,13 +15,33 @@ document.getElementsByTagName("body")[0].appendChild(z);
 //LOADER
 window.onload = function() {
 
+//Append html
+$("body").append('\
+  <img id="MenuShow" src="http://www.iconpng.com/png/windows8_icons2/bill.png" style="position: fixed; right: 7%; bottom: 100px; z-index: 998;width: 5%;">\
+');
+$("body").append('\
+  <div id="MenuList" style="display: none;"><ul>\
+  <li><a href="/#">Home</a></li>\
+  <li><a href="/#clutter">clutter</a></li>\
+  <li><a href="/#php">php</a></li>\
+  <li><a href="/#nginx">nginx</a></li>\
+  <li><a href="/#windows">windows</a></li>\
+  </ul></div>\
+');
+
+
+
 //LOAD SIDR
 $("<link>").attr({
   rel: "stylesheet",
   type: "text/css",
   href: "/inc/plugin/sidr/jquery.sidr.dark.min.css"
 }).appendTo("head");
-$.getScript("/inc/plugin/sidr/jquery.sidr.min.js");
+$.getScript("/inc/plugin/sidr/jquery.sidr.min.js", function() {
+  $('#MenuShow').sidr({name: 'MenuList'});
+  document.oncontextmenu = new Function("$('#MenuShow').click();event.returnValue=false;return false;");
+});
+
 
 
 //Init Article Category Function
@@ -42,25 +62,6 @@ function ArticleCategory(cate) {
   return false;
 }
 
-//Append html
-$("body").append('\
-  <img id="MenuShow" src="http://www.iconpng.com/png/windows8_icons2/bill.png" style="position: fixed; right: 7%; bottom: 100px; z-index: 998;width: 5%;">\
-');
-$("body").append('\
-  <div id="MenuList" style="display: none;"><ul>\
-  <li><a href="/#">Home</a></li>\
-  <li><a href="/#clutter">clutter</a></li>\
-  <li><a href="/#php">php</a></li>\
-  <li><a href="/#nginx">nginx</a></li>\
-  <li><a href="/#windows">windows</a></li>\
-  </ul></div>\
-');
-
-
-
-//Init Sidr
-$('#MenuShow').sidr({name: 'MenuList'});
-document.oncontextmenu = new Function("$('#MenuShow').click();event.returnValue=false;return false;");
 
 
 //Home page
