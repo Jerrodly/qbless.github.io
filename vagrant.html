@@ -1,0 +1,59 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vagrant</title>
+</head>
+<body marginheight="0">
+<h1><a href="/#clutter">[clutter]</a> Vagrant</h1>
+<h2>About</h2>
+<p>Vagrant是一个基于Ruby的工具，用于创建和部署虚拟化开发环境。它 使用Oracle的开源VirtualBox虚拟化系统，使用 Chef创建自动化虚拟环境。
+
+</p>
+<h2>Windows</h2>
+<p>1.安装虚拟机软件(VirtualBox)
+
+</p>
+<p><a href="https://www.virtualbox.org/">https://www.virtualbox.org/</a>
+
+</p>
+<p>2.安装Vagrant
+
+</p>
+<p><a href="http://www.vagrantup.com/">http://www.vagrantup.com/</a>
+
+</p>
+<p>3.下载box
+
+</p>
+<p><a href="http://www.vagrantbox.es/">http://www.vagrantbox.es/</a>
+
+</p>
+<p>eg:
+</p>
+<pre><code>CentOS7.0 x86_64
+VirtualBox
+https://dl.dropboxusercontent.com/s/w3lbekm7eunrskm/centos-7.0-x86_64.box</code></pre>
+<p>4.往vargent里面添加box
+</p>
+<pre><code>vagrant box add "centos-7.0-x86_64" centos-7.0-x86_64.box</code></pre>
+<p>5.到指定目录下初始化，生成一个Vagrantfile
+</p>
+<pre><code>cd D:\Develop\lnmp
+
+vagrant init "centos-7.0-x86_64"</code></pre>
+<p>6.启动
+</p>
+<pre><code>vagrant up</code></pre>
+<h2>Linx</h2>
+<p>to be continued
+
+
+
+</p>
+<h2>Mac OS</h2>
+<p>to be continued</p>
+
+<script type="text/javascript" src="/inc/load.js"></script>
+
+</body>
+</html>
