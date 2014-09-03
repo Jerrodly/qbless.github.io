@@ -46,6 +46,9 @@ $("body").append('\
   <li><a href="/#windows">windows</a></li>\
   </ul></div>\
 ');
+$("body").append('\
+  <span id=\'cnzz_stat_icon_1253192811\'></span>\
+');
 
 
 
