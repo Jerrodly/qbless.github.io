@@ -40,10 +40,11 @@ $("body").append('\
 $("body").append('\
   <div id="MenuList" style="display: none;"><ul>\
   <li><a href="/#">Home</a></li>\
-  <li><a href="/#clutter">clutter</a></li>\
   <li><a href="/#php">php</a></li>\
   <li><a href="/#linux">linux</a></li>\
   <li><a href="/#windows">windows</a></li>\
+  <li><a href="/#clutter">clutter</a></li>\
+  <li><a href="/#excerpt">excerpt</a></li>\
   </ul></div>\
 ');
 $("body").append('\
