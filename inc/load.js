@@ -41,6 +41,8 @@ $("body").append('\
   <div id="MenuList" style="display: none;"><ul>\
   <li><a href="/#">Home</a></li>\
   <li><a href="/#php">php</a></li>\
+  <li><a href="/#mysql">mysql</a></li>\
+  <li><a href="/#nosql">nosql</a></li>\
   <li><a href="/#linux">linux</a></li>\
   <li><a href="/#windows">windows</a></li>\
   <li><a href="/#clutter">clutter</a></li>\
