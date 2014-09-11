@@ -39,7 +39,7 @@ $("body").append('\
 ');
 $("body").append('\
   <div id="MenuList" style="display: none;"><ul>\
-  <li><a href="/#">☯</a></li>\
+  <li><a href="/#" style="font-size:32px;text-align:center;">☯</a></li>\
   <li><a href="/#php">┠ php</a></li>\
   <li><a href="/#mysql">┠ mysql</a></li>\
   <li><a href="/#nosql">┠ nosql</a></li>\
