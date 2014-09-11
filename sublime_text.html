@@ -1,0 +1,61 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sublime Text - Kirin's Blog</title>
+</head>
+<body marginheight="0">
+<h1><a href="/#clutter">[clutter]</a> Sublime Text</h1>
+
+<h2>Download &amp; Install</h2>
+
+<p>http://www.sublimetext.com/3</p>
+
+<h2>Keyboard Shortcuts</h2>
+
+<p>切换项目(Switch Project)
+<code>Ctrl + Alt + p</code>
+命令(command) ps.可快捷打开文件
+<code>Ctrl + Shift + p</code>
+检查php文件语法问题
+<code>Ctrl + b</code></p>
+
+<h2>Configure</h2>
+
+<p>Menu -> Tools -> Build System -> New Build -> 
+<code>{
+    "cmd": ["php", ""],
+    "file_regex": "php$", 
+    "selector": "source.php" 
+}</code>
+-> php.sublime-build</p>
+
+<h2>Package Control</h2>
+
+<p>选择菜单 view->show console ，这时候你就可以看到下边出现了：控制台窗口。输入以下代码，就可以安装好 插件管理器（package control）
+<code>import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())</code>
+粘帖、回车、重启</p>
+
+<h2>Plugin</h2>
+
+<p>Ctrl+Shift+P调出命令面板</p>
+
+<p>输入install 调出 Install Package 选项并回车，然后在列表中选中要安装的插件</p>
+
+<h4>Alignment</h4>
+
+<p>用于代码格式的自动对齐</p>
+
+<h4>DocBlockr</h4>
+
+<p>自动生成注释，方便生成文档</p>
+
+<h4>TortoiseSVN</h4>
+
+<p>Folder右键更新整个目录</p>
+
+<p>快捷的调用TortoiseSVN命令</p>
+
+<script type="text/javascript" src="/inc/load.js"></script>
+
+</body>
+</html>
