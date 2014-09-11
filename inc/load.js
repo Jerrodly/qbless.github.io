@@ -35,7 +35,7 @@ window.onload = function() {
 
 //Append html
 $("body").append('\
-  <img id="MenuShow" src="http://www.iconpng.com/png/windows8_icons2/bill.png" style="position: fixed; right: 7%; bottom: 100px; z-index: 998;width: 5%;">\
+  <img id="MenuShow" src="/inc/menu.png" style="position: fixed; right: 7%; bottom: 100px; z-index: 998;width: 71px;">\
 ');
 $("body").append('\
   <div id="MenuList" style="display: none;"><ul>\
