@@ -50,6 +50,9 @@ $("body").append('\
   </ul></div>\
 ');
 $("body").append('\
+<div id="uyan_frame"></div>\
+');
+$("body").append('\
   <span id=\'cnzz_stat_icon_1253192811\'></span>\
 ');
 
@@ -80,16 +83,11 @@ if (window.location.href.split("/")[3]=='' || window.location.href.indexOf('/#')
   if (window.location.href.indexOf('/#') > 0) {
     ArticleCategory(window.location.href.split("#")[1]);
   }
-} else if (window.location.href.split("/")[3]!='' && window.location.href.indexOf('/#') == -1) {
-  //Article page
-  
-  //Load uyan
-  $("body").append('\
-    <div id="uyan_frame"></div>\
-  ');
-  $.getScript("http://v2.uyan.cc/code/uyan.js?uid=1638581");
 }
 
+//Load uyan
+$.getScript("http://v2.uyan.cc/code/uyan.js?uid=1638581");
+
 //LOAD CNZZ
-$.getScript("http://s95.cnzz.com/stat.php?id=1253192811&online=1&show=line");
+$.getScript("http://s95.cnzz.com/stat.php?id=1253192811");
 }
