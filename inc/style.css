@@ -129,7 +129,7 @@ pre {
   overflow: auto;
 }
 
-code { padding: 0 3px 0 3px; }
+code { padding: 0 3px 0 3px; word-wrap: break-word; }
 pre code { border: 0; padding: 0; }
 
 /* Admonition */
