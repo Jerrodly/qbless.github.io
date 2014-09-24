@@ -56,7 +56,7 @@ $("body").append('\
 //<div id="uyan_frame"></div>\
 //');
 $("body").append('\
-  <div class="ds-thread" data-thread-key="'+window.location.href.split("/")[3]+'" data-title="'+window.document.title.substr(0, window.document.title.length-window.document.title.indexOf('Kirin\'s Blog'))+'" data-url="'+window.location.href+'"></div>\
+  <div class="ds-thread" data-thread-key="'+(window.location.href.split("/")[3].substr(0, window.location.href.split("/")[3].indexOf('.html')) || 'index')+'" data-title="'+window.document.title.substr(0, window.document.title.indexOf(' - Kirin\'s Blog'))+'" data-url="'+window.location.href+'"></div>\
 ');
 $("body").append('\
   <span id=\'cnzz_stat_icon_1253192811\'></span>\
