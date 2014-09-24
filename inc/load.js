@@ -49,8 +49,11 @@ $("body").append('\
   <li><a href="/#excerpt">┠ excerpt</a></li>\
   </ul></div>\
 ');
+//$("body").append('\
+//<div id="uyan_frame"></div>\
+//');
 $("body").append('\
-<div id="uyan_frame"></div>\
+  <div class="ds-thread" data-thread-key="'+window.location.href.split("/")[3]+'" data-title="'+window.document.title.substr(0, window.document.title.length-window.document.title.indexOf('Kirin\'s Blog'))+'" data-url="'+window.location.href+'"></div>\
 ');
 $("body").append('\
   <span id=\'cnzz_stat_icon_1253192811\'></span>\
@@ -86,7 +89,11 @@ if (window.location.href.split("/")[3]=='' || window.location.href.indexOf('/#')
 }
 
 //Load uyan
-$.getScript("http://v2.uyan.cc/code/uyan.js?uid=1638581");
+//$.getScript("http://v2.uyan.cc/code/uyan.js?uid=1638581");
+
+//Load DUOSUO
+var duoshuoQuery = {short_name:"qbless"};
+$.getScript("http://static.duoshuo.com/embed.js");
 
 //LOAD CNZZ
 $.getScript("http://s95.cnzz.com/stat.php?id=1253192811");
