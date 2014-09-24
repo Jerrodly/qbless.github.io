@@ -30,6 +30,9 @@ function ArticleCategory(cate) {
   return false;
 }
 
+//INIT DUOSHUO
+var duoshuoQuery = {short_name:"qbless"};
+
 //LOADER
 window.onload = function() {
 
@@ -88,11 +91,10 @@ if (window.location.href.split("/")[3]=='' || window.location.href.indexOf('/#')
   }
 }
 
-//Load uyan
+//Load UYAN
 //$.getScript("http://v2.uyan.cc/code/uyan.js?uid=1638581");
 
 //Load DUOSUO
-var duoshuoQuery = {short_name:"qbless"};
 $.getScript("http://static.duoshuo.com/embed.js");
 
 //LOAD CNZZ
