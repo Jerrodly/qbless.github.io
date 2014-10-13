@@ -36,6 +36,14 @@ var duoshuoQuery = {short_name:"qbless"};
 //LOADER
 window.onload = function() {
 
+//Non-site address, open a new page
+for (var i=0; i<$('a').length; i++) {
+  var _a = $('a')[i];
+  if (_a.href.indexOf('http') == 0) {
+    $(_a).attr("target", "_blank");
+  }
+}
+
 //Append html
 $("body").append('\
   <img id="MenuShow" src="/inc/menu.png" style="position: fixed; right: 7%; bottom: 100px; z-index: 998;width: 71px;">\
