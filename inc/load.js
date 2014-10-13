@@ -39,7 +39,7 @@ window.onload = function() {
 //Non-site address, open a new page
 for (var i=0; i<$('a').length; i++) {
   var _a = $('a')[i];
-  if (_a.href.indexOf('http') === 0) {
+  if (_a.href.indexOf(window.location.href) < 0) {
     $(_a).attr("target", "_blank");
   }
 }
