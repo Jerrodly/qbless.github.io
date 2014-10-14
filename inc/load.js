@@ -36,12 +36,21 @@ var duoshuoQuery = {short_name:"qbless"};
 //LOADER
 window.onload = function() {
 
+var homePage = (window.location.href.split("/")[3]=='' || window.location.href.indexOf('/#') > 0) ? 1 : 0;
+
 //Non-site address, open a new page
 for (var i=0; i<$('a').length; i++) {
   var _a = $('a')[i];
   if (_a.href.indexOf(window.location.host) < 0) {
     $(_a).attr("target", "_blank");
+  } else if (homePage && _a.href.indexOf('/#') > 0) {
+    $(_a).attr("onclick", "ArticleCategory('"+_a.href.split("#")[1]+"')");
   }
+}
+
+//Home page
+if (window.location.href.indexOf('/#') > 0) {
+  ArticleCategory(window.location.href.split("#")[1]);
 }
 
 //Append html
@@ -84,20 +93,6 @@ $.getScript("/inc/plugin/sidr/jquery.sidr.min.js", function() {
 });
 
 
-
-//Home page
-if (window.location.href.split("/")[3]=='' || window.location.href.indexOf('/#') > 0) {
-  for (var i=0; i<$('a').length; i++) {
-    var _a = $('a')[i];
-    if (_a.href.indexOf('/#') > 0) {
-      $(_a).attr("onclick", "ArticleCategory('"+_a.href.split("#")[1]+"')");
-    }
-  }
-  
-  if (window.location.href.indexOf('/#') > 0) {
-    ArticleCategory(window.location.href.split("#")[1]);
-  }
-}
 
 //Load UYAN
 //$.getScript("http://v2.uyan.cc/code/uyan.js?uid=1638581");
