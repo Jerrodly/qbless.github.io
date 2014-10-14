@@ -38,21 +38,6 @@ window.onload = function() {
 
 var homePage = (window.location.href.split("/")[3]=='' || window.location.href.indexOf('/#') > 0) ? 1 : 0;
 
-//Non-site address, open a new page
-for (var i=0; i<$('a').length; i++) {
-  var _a = $('a')[i];
-  if (_a.href.indexOf(window.location.host) < 0) {
-    $(_a).attr("target", "_blank");
-  } else if (homePage && _a.href.indexOf('/#') > 0) {
-    $(_a).attr("onclick", "ArticleCategory('"+_a.href.split("#")[1]+"')");
-  }
-}
-
-//Home page
-if (window.location.href.indexOf('/#') > 0) {
-  ArticleCategory(window.location.href.split("#")[1]);
-}
-
 //Append html
 $("body").append('\
   <img id="MenuShow" src="/inc/menu.png" style="position: fixed; right: 7%; bottom: 100px; z-index: 998;width: 71px;">\
@@ -78,6 +63,23 @@ $("body").append('\
 $("body").append('\
   <span id=\'cnzz_stat_icon_1253192811\'></span>\
 ');
+
+
+
+//Non-site address, open a new page
+for (var i=0; i<$('a').length; i++) {
+  var _a = $('a')[i];
+  if (_a.href.indexOf(window.location.host) < 0) {
+    $(_a).attr("target", "_blank");
+  } else if (homePage && _a.href.indexOf('/#') > 0) {
+    $(_a).attr("onclick", "ArticleCategory('"+_a.href.split("#")[1]+"')");
+  }
+}
+
+//Home page
+if (window.location.href.indexOf('/#') > 0) {
+  ArticleCategory(window.location.href.split("#")[1]);
+}
 
 
 
