@@ -1,5 +1,5 @@
 #Kirin's blog
-The scribble of Kirin Woo.
+Know, know why.
 
 
 ##Articles
