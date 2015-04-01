@@ -13,4 +13,10 @@ define(function (require, exports, module) {
       });
     });
   });
+  
+  //Load DUOSUO
+  $.getScript("http://static.duoshuo.com/embed.js");
+
+  //LOAD CNZZ
+  $.getScript("http://s95.cnzz.com/stat.php?id=1253192811");
 });
