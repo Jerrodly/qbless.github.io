@@ -2,7 +2,10 @@ define(function (require, exports, module) {
   $ = require('jquery');
 
   //根据URL判断加载页面
-  var page = window.location.href.split(window.location.host)[1].substr(1) || 'index';
+  var page;
+  page = window.location.href.split(window.location.host)[1].substr(1);
+  page = page.indexOf('#') < 0 ? page : page.substr(0, page.indexOf('#'));
+  page = page || 'index';
   
   //先加载marked类
   require.async('marked', function() {
