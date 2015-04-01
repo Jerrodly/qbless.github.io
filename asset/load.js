@@ -10,13 +10,13 @@ define(function (require, exports, module) {
     require.async('theme/base.min.css', function(content) {
       require.async('md/'+page+'.md', function(content) {
         $('body').html(marked(content));
+  
+        //Load DUOSUO
+        $.getScript("http://static.duoshuo.com/embed.js");
+
+        //LOAD CNZZ
+        $.getScript("http://s95.cnzz.com/stat.php?id=1253192811");
       });
     });
   });
-  
-  //Load DUOSUO
-  $.getScript("http://static.duoshuo.com/embed.js");
-
-  //LOAD CNZZ
-  $.getScript("http://s95.cnzz.com/stat.php?id=1253192811");
 });
