@@ -13,7 +13,7 @@ define(function (require, exports, module) {
   
         //Load DUOSUO
         window.duoshuoQuery = {short_name:"qbless"};
-        $.getScript("http://static.duoshuo.com/embed.js");
+        setTimeout(function(){$.getScript("http://static.duoshuo.com/embed.js");}, 7*1000);
 
         //LOAD CNZZ
         $.getScript("http://s95.cnzz.com/stat.php?id=1253192811");
