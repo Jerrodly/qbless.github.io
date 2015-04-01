@@ -12,6 +12,7 @@ define(function (require, exports, module) {
         $('body').html(marked(content));
   
         //Load DUOSUO
+        window.duoshuoQuery = {short_name:"qbless"};
         $.getScript("http://static.duoshuo.com/embed.js");
 
         //LOAD CNZZ
