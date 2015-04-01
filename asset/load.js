@@ -4,6 +4,7 @@ define(function (require, exports, module) {
   //根据URL判断加载页面
   var page;
   page = window.location.href.split(window.location.host)[1].substr(1);
+  page = page.indexOf('.html') < 0 ? page : page.substr(0, page.indexOf('.html'));
   page = page.indexOf('#') < 0 ? page : page.substr(0, page.indexOf('#'));
   page = page || 'index';
   
