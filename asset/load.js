@@ -7,7 +7,7 @@ define(function (require, exports, module) {
   //先加载marked类
   require.async('marked', function() {
     //再加载样式
-    require.async('theme/base.css', function(content) {
+    require.async('theme/base.min.css', function(content) {
       require.async('md/'+page+'.md', function(content) {
         $('body').html(marked(content));
       });
