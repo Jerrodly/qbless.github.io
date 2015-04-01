@@ -11,12 +11,12 @@ define(function (require, exports, module) {
       require.async('md/'+page+'.md', function(content) {
         $('body').html(marked(content));
   
-        //Load DUOSUO
-        window.duoshuoQuery = {short_name:"qbless"};
-        setTimeout(function(){$.getScript("http://static.duoshuo.com/embed.js");}, 7*1000);
-
         //LOAD CNZZ
         $.getScript("http://s95.cnzz.com/stat.php?id=1253192811");
+        
+        //Load DUOSUO
+        window.duoshuoQuery = {short_name:"qbless"};
+        setTimeout(function(){$('body').append('<div class="ds-thread" data-thread-key="'+page+'" data-title="'+window.document.title+'" data-url="'+window.location.href+'"></div>');$.getScript("http://static.duoshuo.com/embed.js");}, 3*1000);
       });
     });
   });
