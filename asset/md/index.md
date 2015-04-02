@@ -1,7 +1,7 @@
 #Kirin's blog
 Know, know why.
 
-##Articles [[all]](/#)
+##Articles
 
 #####2015
 
