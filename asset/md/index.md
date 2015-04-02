@@ -3,6 +3,10 @@ Know, know why.
 
 ##Articles [[all]](/#)
 
+#####2015
+
+* 03-01 [[clutter]](/#clutter) [Static Blog](/static_blog)
+
 #####2014
 
 * 09-11 [[linux]](/#linux) [Linux Screen](/linux_screen)
