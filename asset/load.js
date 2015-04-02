@@ -11,11 +11,11 @@ define(function (require, exports, module) {
 
   //LOAD ARTICLE
   require.async('md/'+page+'.md', function(content) {
-    $('body').html(marked(content)).addClass('markdown-body');
+    $('body').html(marked(content));
   });
 
   //LOAD CSS
-  require.async('theme/github.min.css');
+  require.async('theme/base.min.css');
   
   var category = function(name) {
     if (!name) {
