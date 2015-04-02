@@ -1,4 +1,4 @@
-#Static blog
+#[[clutter]](/#clutter) Static blog
 
 ## SeaJS
 
@@ -158,4 +158,5 @@ define(function (require, exports, module) {
 ```
 
 ps. 该机制采用异步加载文章内容的方式。对搜索引擎的友好度太低，请谨慎考虑。
+
 ps2. 据说Google未来新的采集机制是将页面最终效果进行采集。
