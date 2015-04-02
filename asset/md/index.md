@@ -52,7 +52,9 @@ Know, know why.
 ##About
 Kirin Woo
 
-PHP RD
+RD
+
+PHP JavaScript MySQL NoSQL Nginx Linx
 
 Work in [ND](http://www.nd.com.cn/) - [TMING](http://www.tming.net.cn/)
 
