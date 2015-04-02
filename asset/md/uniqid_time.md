@@ -39,6 +39,6 @@ function getGuid() {
  * @return int time
  */
 function getTimeByGuid($guid) {
-  return (int) base_convert(substr($unique, 0, 10), 36, 10) / pow(2, 20);
+  return (int) base_convert(substr($guid, 0, 10), 36, 10) / pow(2, 20);
 }
 ```
