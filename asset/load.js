@@ -39,7 +39,7 @@ define(function (require, exports, module) {
       }
       $('a[href^="/#"]').click(function(){category(this.href.split('#')[1])});
     } else {
-      $('title').html($('h1').html() + ' - ' + $('title').html());
+      $('title').html($('h1').text() + ' - ' + $('title').html());
     }
     
     //NON-SITE ADDRESS, OPEN A NEW PAGE
