@@ -19,11 +19,11 @@ define(function (require, exports, module) {
   require.async('theme/base.min.css');
   
   var category = function(name) {
-    $('h2#articles a').remove();
+    $('h2#articles a').hide();
     if (!name) {
       $('a[href^="/#"]').parents('li').show();
     } else {
-      $('h2#articles').append(' <a href="/#">All</a>');
+      $('h2#articles a').show();
       $('a[href^="/#"]').parents('li').hide();
       $('a[href^="/#"]').each(function() {
         if (this.href.indexOf(name) > 0) {
@@ -37,6 +37,7 @@ define(function (require, exports, module) {
   setTimeout(function() {
 
     if ('index' == page) {
+      $('h2#articles').append(' <a href="/#">All</a>');
       if (window.location.hash.substr(1)) {
         category(window.location.hash.substr(1));
       }
