@@ -39,6 +39,13 @@ define(function (require, exports, module) {
       }
       $('a[href^="/#"]').click(function(){category(this.href.split('#')[1])});
     }
+    
+    //NON-SITE ADDRESS, OPEN A NEW PAGE
+    $('a').each(function() {
+      if (this.href.indexOf(window.location.host) < 0) {
+        $(this).attr('target', '_blank');
+      }
+    });
 
     //LOAD CNZZ
     $.getScript("http://s95.cnzz.com/stat.php?id=1253192811");
