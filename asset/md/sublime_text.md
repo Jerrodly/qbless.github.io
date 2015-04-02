@@ -59,3 +59,15 @@ Ctrl+Shift+P调出命令面板
 Folder右键更新整个目录
 
 快捷的调用TortoiseSVN命令
+
+####Function Name Display
+
+显示文件、类、方法、参数
+```
+{
+  "display_file": true,
+  "display_class": true,
+  "display_function": true,
+  "display_arguments": true
+}
+```
