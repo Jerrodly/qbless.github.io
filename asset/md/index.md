@@ -2,7 +2,9 @@
 Know, know why.
 
 
-##Articles [all](/#)
+##Articles
+
+#####[[all]](/#)
 
 #####2014
 
