@@ -37,7 +37,7 @@ define(function (require, exports, module) {
   setTimeout(function() {
 
     if ('index' == page) {
-      $('h2#articles').append(' <a href="/#">All</a>');
+      $('h2#articles').append(' <a href="/#">[all]</a>');
       $('h2#articles a').hide();
       if (window.location.hash.substr(1)) {
         category(window.location.hash.substr(1));
