@@ -19,9 +19,11 @@ define(function (require, exports, module) {
   require.async('theme/base.min.css');
   
   var category = function(name) {
+    $('h2#articles a').remove();
     if (!name) {
       $('a[href^="/#"]').parents('li').show();
     } else {
+      $('h2#articles').append(' <a href="/#">All</a>');
       $('a[href^="/#"]').parents('li').hide();
       $('a[href^="/#"]').each(function() {
         if (this.href.indexOf(name) > 0) {
