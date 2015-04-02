@@ -59,7 +59,7 @@ f1g1ns2.dnspod.net
 Username: qbless
 
 
-这个username决定你申请的pages.githu.com页面的域名
+这个username决定你申请的pages.github.com页面的域名
 ```
 
 创建一个仓库 [New repository](https://github.com/new)
