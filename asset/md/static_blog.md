@@ -51,7 +51,7 @@ GitHub提供了一个404的自定义页面，在访问不到改页面的情况�
 <meta charset="UTF-8">
 <title>Kirin's Blog</title>
 </head>
-<body>Loding...</body>
+<body>Loading...</body>
 <script src='/asset/lib/sea.min.js'></script>
 <script src='/asset/lib/seajs-text.min.js'></script>
 <script src='/asset/lib/seajs-css.min.js'></script>
