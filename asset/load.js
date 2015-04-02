@@ -11,7 +11,7 @@ define(function (require, exports, module) {
 
   //LOAD ARTICLE
   require.async('md/'+page+'.md', function(content) {
-    $('body').html(marked(content));
+    $('body').html(marked(content)).addClass('markdown-body');
   });
 
   //LOAD CSS
