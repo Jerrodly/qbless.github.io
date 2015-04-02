@@ -19,8 +19,8 @@ define(function (require, exports, module) {
   require.async('theme/base.min.css');
   
   var category = function(name) {
-    $('h2#articles a').hide();
     if (!name) {
+      $('h2#articles a').hide();
       $('a[href^="/#"]').parents('li').show();
     } else {
       $('h2#articles a').show();
@@ -38,6 +38,7 @@ define(function (require, exports, module) {
 
     if ('index' == page) {
       $('h2#articles').append(' <a href="/#">All</a>');
+      $('h2#articles a').hide();
       if (window.location.hash.substr(1)) {
         category(window.location.hash.substr(1));
       }
