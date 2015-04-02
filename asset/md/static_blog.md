@@ -135,6 +135,8 @@ define(function (require, exports, module) {
         category(window.location.hash.substr(1));
       }
       $('a[href^="/#"]').click(function(){category(this.href.split('#')[1])});
+    } else {
+      $('title').html($('h1').text() + ' - ' + $('title').html());
     }
     
     //NON-SITE ADDRESS, OPEN A NEW PAGE
