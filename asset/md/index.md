@@ -1,10 +1,7 @@
 #Kirin's blog
 Know, know why.
 
-
-##Articles
-
-#####[[all]](/#)
+##Articles [[all]](/#)
 
 #####2014
 
@@ -46,14 +43,12 @@ Know, know why.
  | 
 [GAE](https://appengine.google.com/)
 
-
 ##About
 Kirin Woo
 
 PHP RD
 
 Work in [ND](http://www.nd.com.cn/) - [TMING](http://www.tming.net.cn/)
-
 
 ##Links
 [H1ac0k](http://xrong.net/)
