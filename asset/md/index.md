@@ -5,7 +5,7 @@ Know, know why.
 
 #####2015
 
-* 04-03 #[[team]](/#team) [Parallel Development](/parallel_dev)
+* 04-03 [[team]](/#team) [Parallel Development](/parallel_dev)
 
 * 03-01 [[clutter]](/#clutter) [Static Blog](/static_blog)
 
