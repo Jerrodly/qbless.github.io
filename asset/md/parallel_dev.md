@@ -16,7 +16,7 @@ RD测试在开发环境 dev.qbless.com
 
 QA测试在测试环境 test.qbless.com
 
-上线到运维环境 www.qbless.com
+上线到生产环境 www.qbless.com
 
 那么问题来了。如果A小组开发的功能，并且QA测试过了A功能块，可以上线，并且需求方要求尽快上线。但是这个时候B小组还没过QA，C小组还在开发过程中，如果这个时候A功能要上线，那么需要将B小组、C小组的开发代码还原到他们开发之前的模式，然后将A小组再将Trunk打包上线。上线完成后，B小组与C小组再功能提交到Trunk上面。
 
@@ -30,13 +30,13 @@ QA测试在测试环境 test.qbless.com
 
 #### 0. 创建 SVN分支 Branches/{branche}
 
-#### 1. 跟该分值创建对应 Database 库db_{branche}
+#### 1. 跟该分支创建对应 Database 库db_{branche}
 
 #### 2. 使用脚手架Scaffold，进行配置文件修改，host, dbname, redis 等
 
 #### 3. 进行开发
 
-#### 4. 开发代码由钩子自动同步到 /website/qbless.com/dev 。RD到测试服务器 {branche}.dev.qbless.com 进行开发测试
+#### 4. 开发代码由钩子自动同步到 /website/www.qbless.com/branches 。RD到测试服务器 {branche}.dev.qbless.com 进行开发测试
 
 #### 5. 开发结束
 
@@ -100,8 +100,8 @@ server {
 
 根据分支过过程中
 
-Branches/{branche}/apps/default/config/*.php 进场修改的地方，进行正则匹配替换。
+Branches/{branche}/apps/default/config/*.php 经常修改的地方，进行正则匹配替换。
 
-Database 自动创建 db_{branche} 并且将 trunk db 复制一份到最新
+Database 自动创建 db_{branche} 并且将 trunk db 复制一份最新到分支
 
-所有分支罗列出那边，方便跳转开发。避免多分支多域名消耗记忆存储空间
+罗列出所有分支，方便跳转开发、自测。避免多分支多域名消耗记忆存储空间
