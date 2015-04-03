@@ -103,4 +103,4 @@ Github pages服务器初始生效站点完成。
 
 直接打开TK域名。开始使用了。。。
 
-ps.打开 {Username}.github.io 会发现自动跳转到申请的定级TK域名上。
+ps.打开 {Username}.github.io 会发现自动跳转到申请的定级GA域名上。
