@@ -5,7 +5,7 @@
 
 到首页，输入想要注册的 .TK域名
 ```
-qbless.tk
+qbless.ga
 ```
 ->Go
 
@@ -28,7 +28,7 @@ qbless.tk
 
 添加域名。输入
 ```
-qbless.tk
+qbless.ga
 ```
 添加记录
 ```
@@ -84,6 +84,12 @@ index.html
 
 content:
 This is my index page.
+```
+
+添加 CNAME 文件，将域名绑定到github pages
+
+```
+qbless.ga
 ```
 
 ##Wait
