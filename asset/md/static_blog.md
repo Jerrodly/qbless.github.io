@@ -1,4 +1,4 @@
-#[[clutter]](/#clutter) Static blog
+#[[clutter]](/#clutter) Static Blog
 
 ## SeaJS
 
