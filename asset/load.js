@@ -16,7 +16,7 @@ define(function (require, exports, module) {
   });
 
   //LOAD CSS
-  require.async('theme/base.min.css');
+  require.async('theme/dark.min.css');
   
   var category = function(name) {
     if (!name) {
