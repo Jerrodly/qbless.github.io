@@ -28,31 +28,31 @@ QA测试在测试环境 test.qbless.com
 
 ##Steps
 
-###### 0. 创建 SVN分支 Branches/{branche}
+#### 0. 创建 SVN分支 Branches/{branche}
 
-###### 1. 跟该分值创建对应 Database 库db_{branche}
+#### 1. 跟该分值创建对应 Database 库db_{branche}
 
-###### 2. 使用脚手架Scaffold，进行配置文件修改，host, dbname, redis 等
+#### 2. 使用脚手架Scaffold，进行配置文件修改，host, dbname, redis 等
 
-###### 3. 进行开发
+#### 3. 进行开发
 
-###### 4. 开发代码由钩子自动同步到 /website/qbless.com/dev 。RD到测试服务器 {branche}.dev.qbless.com 进行开发测试
+#### 4. 开发代码由钩子自动同步到 /website/qbless.com/dev 。RD到测试服务器 {branche}.dev.qbless.com 进行开发测试
 
-###### 5. 开发结束
+#### 5. 开发结束
 
-###### 6. 打包{branche}到测试服务器 {branche}.test.qbless.com，由QA开始进行测试
+#### 6. 打包{branche}到测试服务器 {branche}.test.qbless.com，由QA开始进行测试
 
-###### 7. QA反馈BUG，RD修改BUG。循环，直至无BUG
+#### 7. QA反馈BUG，RD修改BUG。循环，直至无BUG
 
-###### 8. 将修改后的代码，提交至 branches/{branche}
+#### 8. 将修改后的代码，提交至 branches/{branche}
 
-###### 9. 提交该功能块 脚本差异列表script.txt，数据库变动 mysql.txt，其他说明 other.txt 到 Docs/module/{branche}/
+#### 9. 提交该功能块 脚本差异列表script.txt，数据库变动 mysql.txt，其他说明 other.txt 到 Docs/module/{branche}/
 
-###### 10. 根据 Docs/module/{branche}/ 将 Branches/{branche} 合并到 Trunk
+#### 10. 根据 Docs/module/{branche}/ 将 Branches/{branche} 合并到 Trunk
 
-###### 11. Trunk 同步到 test.qbless.com 进行QA最后一轮测试，修复。直至无BUG
+#### 11. Trunk 同步到 test.qbless.com 进行QA最后一轮测试，修复。直至无BUG
 
-###### 12. 将 Trunk 同步 上线生产环境 www.qbless.com
+#### 12. 将 Trunk 同步 上线生产环境 www.qbless.com
 
 ##Ngnx Conf
 
