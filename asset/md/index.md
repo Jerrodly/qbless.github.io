@@ -60,3 +60,5 @@ Work in [ND](http://www.nd.com.cn/) - [TMING](http://www.tming.net.cn/)
 
 ##Links
 [H1ac0k](http://xrong.net/)
+ | 
+[Thick Coffee](http://webdev.sinaapp.com/)
