@@ -10,6 +10,7 @@ seajs.config({
   base  : G.baseUrl,
   alias : {
     'jquery' : 'lib/jquery.min',
-    'marked' : 'lib/marked.min'
+    'marked' : 'lib/marked.min',
+    'cookie' : 'lib/cookie.min'
   }
 });
