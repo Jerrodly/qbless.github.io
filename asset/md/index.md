@@ -9,6 +9,8 @@ Know, know why.
 
 * 03-01 [[front]](/#front) [Static Blog](/static_blog)
 
+* 02-17 [[web]](/#web) [Web Architecture](/web_architecture)
+
 * 02-07 [[php]](/#php) [Uniqid & Time](/uniqid_time)
 
 #####2014
