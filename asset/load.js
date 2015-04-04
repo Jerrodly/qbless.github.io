@@ -39,7 +39,7 @@ define(function (require, exports, module) {
       Cookie.set('categorys', JSON.stringify(categorys));
     } else {
       var c;
-      if (c == Cookie.get('categorys')) {
+      if (c = Cookie.get('categorys')) {
         categorys = JSON.parse(c);
       }
     }
