@@ -56,7 +56,7 @@ define(function (require, exports, module) {
               .css('right', '256px');
 
     if ('index' == page) {
-      $('a[href^="/#"]').off('click').on('click', category = function(){
+      $('a[href^="/#"]').off('click').on('click', function(){
         var i;
         if (i = this.href.split('#')[1]) {
           $('.category').hide();
@@ -65,7 +65,7 @@ define(function (require, exports, module) {
           $('.category').show();
         }
       });
-      category(window.location.hash.substr(1));
+      window.location.hash.substr(1) && $('.menu a[href="/#'+window.location.hash.substr(1)+'"]').click();
     } else {
       $('title').html($('h1').text() + ' - ' + $('title').html());
     }
