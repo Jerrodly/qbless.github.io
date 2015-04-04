@@ -1,6 +1,7 @@
 define(function (require, exports, module) {
   $ = require('jquery');
   marked = require('marked');
+  Cookie = require('cookie');
 
   //ACCORDING TO IDENTIFY THE PAGE URL
   var page;
@@ -18,35 +19,56 @@ define(function (require, exports, module) {
   //LOAD CSS
   require.async('theme/dark.min.css');
   
-  var category = function(name) {
-    if (!name) {
-      $('h2#articles a').hide();
-      $('a[href^="/#"]').parents('li').show();
-    } else {
-      $('h2#articles a').show();
-      $('a[href^="/#"]').parents('li').hide();
-      $('a[href^="/#"]').each(function() {
-        if (this.href.indexOf(name) > 0) {
-          $(this).parents('li').show();
-        }
-      })
-    }
-  }
-  
   //DELAYED LOAD
   setTimeout(function() {
+    var categorys = {};
 
     if ('index' == page) {
-      $('h2#articles').append(' <a href="/#">[all]</a>');
-      $('h2#articles a').hide();
-      if (window.location.hash.substr(1)) {
-        category(window.location.hash.substr(1));
+      $('a[href^="/#"]').each(function(){
+        var category = this.href.split('#')[1];
+        $(this).parents('li').addClass('category_'+category);
+
+        if (!category) return;
+        if (categorys[category] >= 0) {
+          categorys[category] += 1;
+        } else {
+          categorys[category] = 1;
+        }
+      }).parents('li').addClass('category');
+
+      Cookie.set('categorys', JSON.stringify(categorys));
+    } else {
+      if (var c == Cookie.get('categorys')) {
+        categorys = JSON.parse(c);
       }
-      $('a[href^="/#"]').click(function(){category(this.href.split('#')[1])});
+    }
+
+    var menu = '<div class="menu"><ul><li><a href="/#">home</a></li>';
+    for(var category in categorys) {
+      menu += '<li><a href="/#'+category+'">'+category+' ('+categorys[category]+')</a></li>';
+    }
+    menu += '</ul></div>';
+    $('body').append(menu);
+
+    $('.menu').css('position', 'fixed')
+              .css('top', '71px')
+              .css('right', '256px');
+
+    if ('index' == page) {
+      $('a[href^="/#"]').off('click').on('click', category = function(){
+        var i;
+        if (i = this.href.split('#')[1]) {
+          $('.category').hide();
+          $('.category_'+i).show();
+        } else {
+          $('.category').show();
+        }
+      });
+      category(window.location.hash.substr(1));
     } else {
       $('title').html($('h1').text() + ' - ' + $('title').html());
     }
-    
+
     //NON-SITE ADDRESS, OPEN A NEW PAGE
     $('a').each(function() {
       if (this.href.indexOf(window.location.host) < 0) {
