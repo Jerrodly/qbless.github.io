@@ -38,7 +38,8 @@ define(function (require, exports, module) {
 
       Cookie.set('categorys', JSON.stringify(categorys));
     } else {
-      if (var c == Cookie.get('categorys')) {
+      var c;
+      if (c == Cookie.get('categorys')) {
         categorys = JSON.parse(c);
       }
     }
