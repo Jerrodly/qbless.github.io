@@ -1,4 +1,4 @@
-#[[clutter]](/#clutter) Sublime Text
+#[[tool]](/#tool) Sublime Text
 
 ##Download & Install
 http://www.sublimetext.com/3
