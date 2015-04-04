@@ -7,7 +7,7 @@ Know, know why.
 
 * 04-03 [[team]](/#team) [Parallel Development](/parallel_dev)
 
-* 03-01 [[clutter]](/#clutter) [Static Blog](/static_blog)
+* 03-01 [[front]](/#front) [Static Blog](/static_blog)
 
 * 02-07 [[php]](/#php) [Uniqid & Time](/uniqid_time)
 
