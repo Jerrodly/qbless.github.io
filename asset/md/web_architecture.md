@@ -76,6 +76,14 @@ Verification 数据校验
 
 ## Back-end
 
+#### Config
+
+减少硬编码
+
+开关可配置化
+
+逻辑可配置化
+
 #### RESTful API
 
 目前比较成熟的一套互联网应用程序的API设计理论
