@@ -1,4 +1,4 @@
-#[[clutter]](/#clutter) Vagrant
+#[[tool]](/#tool) Vagrant
 
 ##About
 
