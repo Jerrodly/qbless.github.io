@@ -1,4 +1,4 @@
-#[[clutter]](/#clutter) Http Status Code
+#[[web]](/#web) Http Status Code
 
 ##2xx 成功
 
