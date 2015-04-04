@@ -15,9 +15,9 @@ Know, know why.
 
 * 09-11 [[linux]](/#linux) [Linux Screen](/linux_screen)
 
-* 09-10 [[clutter]](/#clutter) [Sublime Text](/sublime_text)
+* 09-10 [[tool]](/#tool) [Sublime Text](/sublime_text)
 
-* 09-01 [[clutter]](/#clutter) [Vagrant](/vagrant)
+* 09-01 [[tool]](/#tool) [Vagrant](/vagrant)
 
 * 08-22 [[clutter]](/#clutter) [Free Domain DNS Server](/free_domain_dns_server)
 
@@ -31,7 +31,7 @@ Know, know why.
 
 * 11-09 [[php]](/#php) [PHP Smarty Bug](/php_smarty_bug)
 
-* 11-08 [[clutter]](/#clutter) [Http Status Code](/http_status_code)
+* 11-08 [[web]](/#web) [Http Status Code](/http_status_code)
 
 * 11-07 [[windows]](/#windows) [Free Cloud Server](/free_cloud_server)
 
