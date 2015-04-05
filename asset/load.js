@@ -51,7 +51,7 @@ define(function (require, exports, module) {
     menu += '</ul></div>';
     $('body').append(menu);
 
-    $('.menu').css('position', 'fixed')
+    $('.menu').css('position', 'absolute')
               .css('top', '71px')
               .css('right', '256px');
 
