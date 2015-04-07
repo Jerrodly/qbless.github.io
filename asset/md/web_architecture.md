@@ -38,6 +38,14 @@ Browser -> Server(Nginx | Apache) -> PHP
 
 ## Front-end
 
+#### Dismantling
+
+CSS 样式 (base、head、foot、top ...)
+
+Widget 挂件 (alert、confirm、login ...)
+
+Util 工具
+
 #### Template compile
 
 [Micro-Templating](http://ejohn.org/blog/javascript-micro-templating/)
@@ -71,6 +79,12 @@ Verification 数据校验
 #### Revision
 
 要改版了。不用找后端程序员，直接由前端程序员进行新版本开发，调用相同接口。即可。
+
+#### Build Forge
+
+自动化构建
+
+css压缩、js压缩规则
 
 #### ...
 
