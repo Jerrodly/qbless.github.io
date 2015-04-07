@@ -68,6 +68,14 @@ define(function (require, exports, module) {
       window.location.hash.substr(1) && $('.menu a[href="/#'+window.location.hash.substr(1)+'"]').click();
     } else {
       $('title').html($('h1').text() + ' - ' + $('title').html());
+
+      $('h2,h4').each(function() {
+        $(this).html('<a href="#'+$(this).attr('id')+'">'+$(this).html()+'</a>');
+        $(this).click(function() {
+          $('html,body').animate({scrollTop: $(this).offset().top});
+        });
+      });
+      window.location.hash.substr(1) && $('#'+window.location.hash.substr(1)).click();
     }
 
     //NON-SITE ADDRESS, OPEN A NEW PAGE
