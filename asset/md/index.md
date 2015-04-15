@@ -52,6 +52,10 @@ Know, know why.
 [PHP Manual](http://php.net/manual/zh/)
  | 
 [GAE](https://appengine.google.com/)
+ | 
+[TortoiseSVN](http://tortoisesvn.net/)
+ | 
+[TortoiseGit](https://tortoisegit.org/)
 
 ##About
 Kirin Woo
