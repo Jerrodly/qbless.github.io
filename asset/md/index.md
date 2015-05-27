@@ -53,6 +53,8 @@ Know, know why.
  | 
 [PHP Manual](http://php.net/manual/zh/)
  | 
+[Sandboxie](http://www.sandboxie.com/)
+ | 
 [GAE](https://appengine.google.com/)
  | 
 [TortoiseSVN](http://tortoisesvn.net/)
