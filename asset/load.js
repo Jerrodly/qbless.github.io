@@ -46,7 +46,7 @@ define(function (require, exports, module) {
 
     var menu = '<div class="menu"><ul><li><a href="/#">home</a></li>';
     for(var category in categorys) {
-      menu += '<li><a href="/#'+category+'">'+category+' ('+categorys[category].toLowerCase()+')</a></li>';
+      menu += '<li><a href="/#'+category+'">'+category.toLowerCase()+' ('+categorys[category]+')</a></li>';
     }
     menu += '</ul></div>';
     $('body').append(menu);
@@ -54,9 +54,8 @@ define(function (require, exports, module) {
     $('.menu').css('position', 'absolute')
               .css('top', '71px')
               .css('right', '71px')
-              .css('text-align', 'right')
-              .find('ul')
-                .css('list-style', 'none;');
+              .css('text-align', 'right');
+    $('.menu').find('ul').css('list-style', 'none;');
 
     if ('index' == page) {
       $('a[href^="/#"]').off('click').on('click', function(){
