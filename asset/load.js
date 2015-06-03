@@ -53,7 +53,10 @@ define(function (require, exports, module) {
 
     $('.menu').css('position', 'absolute')
               .css('top', '71px')
-              .css('right', '256px');
+              .css('right', '71px')
+              .css('text-align', 'right')
+              .find('ul')
+                .css('list-style', 'none;');
 
     if ('index' == page) {
       $('a[href^="/#"]').off('click').on('click', function(){
