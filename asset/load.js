@@ -46,7 +46,7 @@ define(function (require, exports, module) {
 
     var menu = '<div class="menu"><ul><li><a href="/#">home</a></li>';
     for(var category in categorys) {
-      menu += '<li><a href="/#'+category+'">'+category.toUpperCase()+' ('+categorys[category]+')</a></li>';
+      menu += '<li><a href="/#'+category+'">'+category+' ('+categorys[category]+')</a></li>';
     }
     menu += '</ul></div>';
     $('body').append(menu);
