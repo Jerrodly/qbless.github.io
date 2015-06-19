@@ -63,11 +63,12 @@ define(function (require, exports, module) {
 
       $('title').html(('index' != params.page ? ($('h1').text() + ' - ') : '') + 'Kirin\'s Blog');
 
-      var menu = '<div class="menu"><ul><li><a href="#">home</a></li>';
+      var total = 0, menu = '';
       for (var tag in tags) {
           menu += '<li><a href="#!tag=' + tag + '">' + tag + ' (' + tags[tag] + ')</a></li>';
+          total += tags[tag];
       }
-      menu += '</ul></div>';
+      menu = '<div class="menu"><ul><li><a href="#">home('+total+')</a></li>' + menu + '</ul></div>';
       $('body').append(menu);
       $('.menu').css('position', 'absolute').css('top', '71px').css('right', '71px').css('text-align', 'right');
       $('.menu ul').css('list-style', 'none');
