@@ -5,41 +5,41 @@ Know, know why.
 
 #####2015
 
-* 05-08 [[tool]](/#tool) [Developing in the cloud](/dev_in_the_cloud)
+* 05-08 [Developing in the cloud](/dev_in_the_cloud) [#tool#](/#tool)
 
-* 04-03 [[team]](/#team) [Parallel Development](/parallel_dev)
+* 04-03 [Parallel Development](/parallel_dev) [#team#](/#team)
 
-* 03-01 [[front]](/#front) [Static Blog](/static_blog)
+* 03-01 [Static Blog](/static_blog) [#front#](/#front)
 
-* 02-17 [[web]](/#web) [Web Architecture](/web_architecture)
+* 02-17 [Web Architecture](/web_architecture) [#web#](/#web)
 
-* 02-07 [[php]](/#php) [Uniqid & Time](/uniqid_time)
+* 02-07 [Uniqid & Time](/uniqid_time) [#php#](/#php)
 
 #####2014
 
-* 09-11 [[linux]](/#linux) [Linux Screen](/linux_screen)
+* 09-11 [Linux Screen](/linux_screen) [#linux#](/#linux)
 
-* 09-10 [[tool]](/#tool) [Sublime Text](/sublime_text)
+* 09-10 [Sublime Text](/sublime_text) [#tool#](/#tool)
 
-* 09-01 [[tool]](/#tool) [Vagrant](/vagrant)
+* 09-01 [Vagrant](/vagrant) [#tool#](/#tool)
 
-* 08-22 [[clutter]](/#clutter) [Free Domain DNS Server](/free_domain_dns_server)
+* 08-22 [Free Domain DNS Server](/free_domain_dns_server) [#clutter#](/#clutter)
 
-* 08-18 [[php]](/#php) [PHP Documentor](/phpdoc)
+* 08-18 [PHP Documentor](/phpdoc) [#php#](/#php)
 
-* 04-02 [[nosql]](/#nosql) [MongoDB Cli](/mongodb_cli)
+* 04-02 [MongoDB Cli](/mongodb_cli) [#nosql#](/#nosql)
 
 #####2013
 
-* 12-02 [[excerpt]](/#excerpt) [Technology Management](/technology_management)
+* 12-02 [Technology Management](/technology_management) [#excerpt#](/#excerpt)
 
-* 11-09 [[php]](/#php) [PHP Smarty Bug](/php_smarty_bug)
+* 11-09 [PHP Smarty Bug](/php_smarty_bug) [#php#](/#php)
 
-* 11-08 [[web]](/#web) [Http Status Code](/http_status_code)
+* 11-08 [Http Status Code](/http_status_code) [#web#](/#web)
 
-* 11-07 [[windows]](/#windows) [Free Cloud Server](/free_cloud_server)
+* 11-07 [Free Cloud Server](/free_cloud_server) [#windows#](/#windows)
 
-* 11-06 [[windows]](/#windows) [WNMP MongoDB Redis](/wnmp)
+* 11-06 [WNMP MongoDB Redis](/wnmp) [#windows#](/#windows)
 
 
 ##Tools
@@ -47,19 +47,20 @@ Know, know why.
  | 
 [HeidiSQL](http://www.heidisql.com/)
  | 
+[TortoiseSVN](http://tortoisesvn.net/)
+ | 
+[TortoiseGit](https://tortoisegit.org/)
+ | 
+[PHP Manual](http://php.net/manual/zh/)
+
+
+[Sandboxie](http://www.sandboxie.com/)
+ | 
 [FileZilla](https://filezilla-project.org/)
  | 
 [Secure Shell](https://chrome.google.com/webstore/detail/pnhechapfaindjhompbnflcldabbghjo)
  | 
-[PHP Manual](http://php.net/manual/zh/)
- | 
-[Sandboxie](http://www.sandboxie.com/)
- | 
 [GAE](https://appengine.google.com/)
- | 
-[TortoiseSVN](http://tortoisesvn.net/)
- | 
-[TortoiseGit](https://tortoisegit.org/)
 
 ##About
 Kirin Woo
