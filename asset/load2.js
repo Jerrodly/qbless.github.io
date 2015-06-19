@@ -13,7 +13,7 @@ define(function (require, exports, module) {
     params.page = location.hash.indexOf('#!') >= 0 && location.hash.indexOf('#!tag') < 0 && location.hash.substr(2) || 'index';
     params.tag  = location.hash.indexOf('#!tag=') >= 0 && location.hash.substr(6) || '';
     
-    location.origin.length = location.protocol + '//' + location.hostname;
+    location.origin = location.protocol + '//' + location.hostname;
 
     var tags = {};
 
