@@ -4,7 +4,7 @@ define(function (require, exports, module) {
   Cookie = require('cookie');
 
   require.async('theme/github.min.css');
-  $('body').addClass('markdown-body').css({'margin': '64px auto'});
+  $('body').addClass('markdown-body').css({'margin': '64px'});
 
   window.duoshuoQuery = {short_name: "qbless"};
   $.getScript("http://static.duoshuo.com/embed.js");
