@@ -4,7 +4,7 @@ define(function (require, exports, module) {
   Cookie = require('cookie');
 
   require.async('theme/github.min.css');
-  $('body').addClass('markdown-body').css('width', '1024px').css('margin', '64px auto')
+  $('body').addClass('markdown-body').css({'margin': '64px auto'});
 
   window.duoshuoQuery = {short_name: "qbless"};
   $.getScript("http://static.duoshuo.com/embed.js");
@@ -73,7 +73,7 @@ define(function (require, exports, module) {
       }
       menu = '<div class="nav menu"><ul><li><a href="#" title="' + total + '">HOME</a></li>' + menu + '</ul></div>';
       $('body').append(menu);
-      $('.nav').css({'position': 'fixed', 'top': '0px', 'width': '1024px', 'z-index': '998', 'background': '#eee'});
+      $('.nav').css({'position': 'fixed', 'top': '0px', 'left': '0px', 'width': '100%', 'z-index': '998', 'background': '#eee'});
       $('.nav li').css({'float': 'left', 'padding': '8px'});
       //$('.menu').css({'position': 'absolute', 'top': '71px', 'right': '71px', 'text-align': 'right'});
       //$('.menu ul').css('list-style', 'none');
