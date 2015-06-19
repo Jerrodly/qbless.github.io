@@ -3,7 +3,8 @@ define(function (require, exports, module) {
   marked = require('marked');
   Cookie = require('cookie');
 
-  require.async('theme/dark.min.css');
+  require.async('theme/github.min.css');
+  $('body').addClass('markdown-body').css('width', '1024px').css('margin', '64px auto')
 
   window.duoshuoQuery = {short_name: "qbless"};
   $.getScript("http://static.duoshuo.com/embed.js");
@@ -67,13 +68,15 @@ define(function (require, exports, module) {
 
       var total = 0, menu = '';
       for (var tag in tags) {
-          menu += '<li><a href="#!tag=' + tag + '">' + tag + ' (' + tags[tag] + ')</a></li>';
+          menu += '<li><a href="#!tag=' + tag + '" title="' + tags[tag] + '">' + tag.toUpperCase() + '</a></li>';
           total += tags[tag];
       }
-      menu = '<div class="menu"><ul><li><a href="#">home('+total+')</a></li>' + menu + '</ul></div>';
+      menu = '<div class="nav menu"><ul><li><a href="#" title="' + total + '">HOME</a></li>' + menu + '</ul></div>';
       $('body').append(menu);
-      $('.menu').css('position', 'absolute').css('top', '71px').css('right', '71px').css('text-align', 'right');
-      $('.menu ul').css('list-style', 'none');
+      $('.nav').css({'position': 'fixed', 'top': '0px', 'width': '1024px', 'z-index': '998', 'background': '#eee'});
+      $('.nav li').css({'float': 'left', 'padding': '8px'});
+      //$('.menu').css({'position': 'absolute', 'top': '71px', 'right': '71px', 'text-align': 'right'});
+      //$('.menu ul').css('list-style', 'none');
 
       $('a').each(function() {
           if (this.href.indexOf(location.host) < 0) {
