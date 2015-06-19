@@ -12,6 +12,8 @@ define(function (require, exports, module) {
     var params = {}
     params.page = location.hash.indexOf('#!') >= 0 && location.hash.indexOf('#!tag') < 0 && location.hash.substr(2) || 'index';
     params.tag  = location.hash.indexOf('#!tag=') >= 0 && location.hash.substr(6) || '';
+    
+    location.origin.length = location.protocol + '//' + location.hostname;
 
     var tags = {};
 
@@ -22,7 +24,7 @@ define(function (require, exports, module) {
       $("a[href^='/']").each(function() {
 
         if (this.href.indexOf('#') >= 0) {
-          var tag = this.href.substr(location.href.length + 1)
+          var tag = this.href.substr(location.origin.length + 2)
           this.href = '#!tag=' + tag;
 
           if ('index' == params.page) {
@@ -36,7 +38,7 @@ define(function (require, exports, module) {
           }
           
         } else {    
-          this.href = '#!' + this.href.substr(location.href.length);
+          this.href = '#!' + this.href.substr(location.origin.length + 1);
         }
 
         $(this).off('click').on('click', function () {
