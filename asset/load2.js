@@ -22,7 +22,7 @@ define(function (require, exports, module) {
       $("a[href^='/']").each(function() {
 
         if (this.href.indexOf('#') >= 0) {
-          var tag = this.href.substr(location.origin.length + 2)
+          var tag = this.href.substr(location.href.length + 1)
           this.href = '#!tag=' + tag;
 
           if ('index' == params.page) {
@@ -36,7 +36,7 @@ define(function (require, exports, module) {
           }
           
         } else {    
-          this.href = '#!' + this.href.substr(location.origin.length + 1);
+          this.href = '#!' + this.href.substr(location.href.length);
         }
 
         $(this).off('click').on('click', function () {
