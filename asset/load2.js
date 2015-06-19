@@ -49,6 +49,7 @@ define(function (require, exports, module) {
       });
 
       if ('index' == params.page) {
+        $("a[href^='#!tag=']").css({'color': '#aaa'});
         $("a[href^='#!tag=']").parents('li').addClass('tags');
 
         if (params.tag.length) {
