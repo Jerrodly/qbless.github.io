@@ -15,6 +15,7 @@ define(function (require, exports, module) {
 
     var tags = {};
 
+    $('body').html('Loading...');
     require.async('md/'+params.page+'.md', function (content) {
       $('body').html(marked(content));
 
