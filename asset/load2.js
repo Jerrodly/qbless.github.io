@@ -21,7 +21,7 @@ define(function (require, exports, module) {
     var tags = {};
 
     $('body').html('Loading...');
-    require.async('md/'+params.page+'.md', function (content) {
+    require.async('md/'+params.page+'.md', function (content) { console.log(this.status);
       $('body').html(marked(content));
 
       $("a[href^='/']").each(function() {
