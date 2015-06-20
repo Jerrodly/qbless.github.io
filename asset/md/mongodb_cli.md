@@ -1,13 +1,9 @@
-#[[nosql]](/#nosql) MongoDB Cli
-
-
+#MongoDB Cli [#nosql#](/#nosql)
 
 ##Connect
 ```
 mongo ip:port/database -u yonghu -p mima
 ```
-
-
 
 ##Usage
 ```
@@ -29,8 +25,6 @@ options:
   --version             show version information
 ```
 
-
-
 ##Common use
 ```
 show collections
@@ -45,8 +39,6 @@ db.test.find()
 db.test.remove()
 //删除当前数据集
 ```
-
-
 
 ##MongoDb vs Mysql
 ```
@@ -126,8 +118,6 @@ db.test.update({'name':'foobar'},{$inc:{'age':3}})
 <==>
 update test set age=age+3 where name='foobar'
 ```
-
-
 
 ##Complete
 ```
