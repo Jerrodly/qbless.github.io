@@ -1,4 +1,4 @@
-#[[clutter]](/#clutter) Free Domain DNS Server
+#Free Domain DNS Server [#clutter#](/#clutter)
 
 ##Domain
 免费提供顶级域名: http://www.dot.tk/zh/index.html?lang=zh
