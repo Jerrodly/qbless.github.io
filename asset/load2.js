@@ -12,6 +12,8 @@ define(function (require, exports, module) {
   var article = function() {
     var params = {}
     params.page = location.hash.indexOf('#!') >= 0 && location.hash.indexOf('#!tag') < 0 && location.hash.substr(2) || 'index';
+    params.page = params.page.indexOf('.') < 0 ? params.page : params.page.substr(0, params.page.indexOf('.'));
+    params.page = params.page.indexOf('?') < 0 ? params.page : params.page.substr(0, params.page.indexOf('?'));
     params.tag  = location.hash.indexOf('#!tag=') >= 0 && location.hash.substr(6) || '';
     
     location.origin = location.protocol + '//' + location.hostname;
