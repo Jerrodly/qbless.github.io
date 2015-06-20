@@ -1,4 +1,4 @@
-#[[web]](/#web) Web Architecture
+#Web Architecture [#web#](/#web)
 
 ## MVC
 
