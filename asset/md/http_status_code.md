@@ -1,4 +1,4 @@
-#[[web]](/#web) Http Status Code
+#Http Status Code [#web#](/#web)
 
 ##2xx 成功
 
