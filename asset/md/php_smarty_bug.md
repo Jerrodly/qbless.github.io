@@ -1,4 +1,4 @@
-#[[php]](/#php) PHP Smarty Bug
+#PHP Smarty Bug [#php#](/#php)
 
 ##前提
 
