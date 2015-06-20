@@ -41,33 +41,63 @@ Know, know why.
 
 * 11-06 [WNMP MongoDB Redis](/wnmp) [#windows#](/#windows)
 
-
 ##Tools
+
+Editor:
 [Sublime Text](http://www.sublimetext.com/)
  | 
-[HeidiSQL](http://www.heidisql.com/)
+[Vim](http://www.vim.org/)
  | 
+[PHPStorm](http://www.jetbrains.com/phpstorm/)
+ | 
+[Editplus](https://www.editplus.com/)
+
+Version:
 [TortoiseSVN](http://tortoisesvn.net/)
  | 
 [TortoiseGit](https://tortoisegit.org/)
  | 
-[PHP Manual](http://php.net/manual/zh/)
-
-
-[Sandboxie](http://www.sandboxie.com/)
+[Github Windows](https://windows.github.com/)
  | 
+[Beyond Compare](http://www.scootersoftware.com/)
+
+Connect:
 [FileZilla](https://filezilla-project.org/)
  | 
 [Secure Shell](https://chrome.google.com/webstore/detail/pnhechapfaindjhompbnflcldabbghjo)
  | 
+[Mobaxterm](http://mobaxterm.mobatek.net/)
+
+B/S Dev:
+[PHP Manual](http://php.net/manual/zh/)
+ | 
+[Virtualbox](https://www.virtualbox.org/)
+ | 
+[Vagrant](https://www.vagrantup.com/)
+ | 
+[HeidiSQL](http://www.heidisql.com/)
+ | 
+[Fiddler](http://www.telerik.com/fiddler)
+ | 
+[Poedit](http://poedit.net/)
+
+Helpful:
 [GAE](https://appengine.google.com/)
+ |
+[Goagent](https://code.google.com/p/goagent/)
+ | 
+[Sandboxie](http://www.sandboxie.com/)
+ | 
+[MacType](http://www.iplaysoft.com/mactype.html)
+ | 
+[F.lux](https://justgetflux.com/)
+ | 
+[Clover](http://cn.ejie.me/)
 
 ##About
 Kirin Woo
 
-RD
-
-PHP JavaScript MySQL NoSQL Nginx Linx
+RD : Linx Nginx PHP MySQL ECMAScript MongoDB Redis SQLite ...
 
 Work in [ND](http://www.nd.com.cn/) - [TMING](http://www.tming.net.cn/)
 
