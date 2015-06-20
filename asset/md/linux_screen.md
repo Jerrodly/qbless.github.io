@@ -1,4 +1,4 @@
-#[[linux]](/#linux) Linux Screen
+#Linux Screen [#linux#](/#linux)
 
 ##Question
 在需要SSH或者Telent远程到Linux服务器上，处理一些长时间才能完成的任务时。
