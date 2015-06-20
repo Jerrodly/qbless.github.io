@@ -7,9 +7,9 @@ Know, know why.
 
 * 05-08 [Developing in the cloud](/dev_in_the_cloud) [#tool#](/#tool)
 
-* 04-03 [Parallel Development](/parallel_dev) [#team#](/#team)
+* 04-03 [Parallel Development](/parallel_dev) [#cooperation#](/#cooperation)
 
-* 03-01 [Static Blog](/static_blog) [#front#](/#front)
+* 03-01 [Static Blog](/static_blog) [#front-end#](/#front-end)
 
 * 02-17 [Web Architecture](/web_architecture) [#web#](/#web)
 
