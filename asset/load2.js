@@ -49,7 +49,6 @@ define(function (require, exports, module) {
       });
 
       if ('index' == params.page) {
-        $("a[href^='#!tag=']").css({'color': '#aaa'});
         $("a[href^='#!tag=']").parents('li').addClass('tags');
 
         if (params.tag.length) {
@@ -65,14 +64,15 @@ define(function (require, exports, module) {
         }
       }
 
+      $("a[href^='#!tag=']").css({'color': '#aaa'});
       $('title').html(('index' != params.page ? ($('h1').text() + ' - ') : '') + 'Kirin\'s Blog');
 
       var total = 0, menu = '';
       for (var tag in tags) {
-          menu += '<li><a href="#!tag=' + tag + '" title="' + tags[tag] + '">' + tag.toUpperCase() + '</a></li>';
+          menu += '<li><a href="#!tag=' + tag + '" title="' + tags[tag] + ' article">' + tag.toUpperCase() + '</a></li>';
           total += tags[tag];
       }
-      menu = '<div class="nav menu"><ul><li><a href="#" title="' + total + '">HOME</a></li>' + menu + '</ul></div>';
+      menu = '<div class="nav menu"><ul><li><a href="#" title="' + total + ' article">HOME</a></li>' + menu + '</ul></div>';
       $('body').append(menu);
       $('.nav').css({'position': 'fixed', 'top': '0px', 'left': '0px', 'width': '100%', 'z-index': '998', 'background': '#eee'});
       $('.nav li').css({'float': 'left', 'padding': '8px'});
@@ -92,6 +92,7 @@ define(function (require, exports, module) {
           var el = document.createElement('div');
           el.setAttribute('class', 'ds-thread');
           el.setAttribute('data-thread-key', params.page);
+          el.setAttribute('data-title', document.title);
           el.setAttribute('data-url', location.href);
           window.DUOSHUO.EmbedThread(el);
           $('body').append(el);
