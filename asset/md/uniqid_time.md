@@ -1,4 +1,4 @@
-#[[php]](/#php) Uniqid & Time
+#Uniqid & Time [#php#](/#php)
 
 获取一个带前缀、基于当前时间微秒数的唯一ID
 ```
