@@ -1,4 +1,4 @@
-#[[windows]](/#windows) Free Cloud Server
+#Free Cloud Server [#windows#](/#windows)
 
 想要建一个自己的博客。但又不想花钱买服务器，域名。那么就看看以下的步骤吧。
 
