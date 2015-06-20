@@ -1,4 +1,4 @@
-#[[tool]](/#tool) Developing in the cloud
+#Developing in the cloud [#tool#](/#tool) 
 
 ## Preface
 
