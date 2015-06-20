@@ -1,4 +1,4 @@
-#[[front]](/#front) Static Blog
+#Static Blog [#front-end#](/#front-end)
 
 ## SeaJS
 
