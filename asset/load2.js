@@ -98,9 +98,8 @@ define(function (require, exports, module) {
           $('body').append(el);
         }
       }, 1 * 1000);
-
-
-      $('html,body').animate({scrollTop: 0});
+      
+      //$('html,body').animate({scrollTop: 0});
     });
   }
 
