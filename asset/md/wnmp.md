@@ -1,4 +1,4 @@
-#[[windows]](/#windows) WNMP MongoDB Redis
+#WNMP MongoDB Redis [#windows#](/#windows)
 
 ##Data
 用于分离配置文件，日志，数据存储。
