@@ -21,7 +21,7 @@ define(function (require, exports, module) {
     var tags = {};
 
     $('body').html('Loading...');
-    require.async('md/'+params.page+'.md', function (content) { console.log(this.status);
+    require.async('md/'+params.page+'.md', function (content) {
       $('body').html(marked(content));
 
       $("a[href^='/']").each(function() {
@@ -99,7 +99,7 @@ define(function (require, exports, module) {
           window.DUOSHUO.EmbedThread(el);
           $('body').append(el);
         }
-      }, 1 * 1000);
+      }, 3 * 1000);
       
       //$('html,body').animate({scrollTop: 0});
     });
