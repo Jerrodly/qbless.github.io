@@ -1,4 +1,4 @@
-#[[team]](/#team) Parallel Development
+#Parallel Development [#cooperation#](/#cooperation)
 
 ##Scenario reproduction
 
