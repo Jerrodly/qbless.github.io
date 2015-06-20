@@ -1,4 +1,4 @@
-#[[excerpt]](/#excerpt) 浅谈技术管理
+#浅谈技术管理 [#excerpt#](/#excerpt)
 
 via: http://hi.baidu.com/ncaoz/item/8a17ff633682fd09a0cf0f78
 
