@@ -1,4 +1,4 @@
-#[[php]](/#php) PHP Documentor
+#PHP Documentor [#php#](/#php)
 
 ##Step
 #####0.下载最新版本(phpDocumentor-1.5.0a1 2012-09-01)
