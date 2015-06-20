@@ -306,6 +306,6 @@ ps -k redis-server.exe
 echo Redis stop OK!
 ```
 
-#PS
+##PS
 [RunHiddenConsole.exe](https://www.google.com.hk/search?q=RunHiddenConsole)
 [PS.exe](https://www.google.com.hk/search?q=windows+ps+command)
