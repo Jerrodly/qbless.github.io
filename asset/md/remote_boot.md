@@ -1,4 +1,4 @@
-#Remote Boot [#tool#](/tool)
+#Remote Boot [#tool#](/#tool)
 
 公司办公电脑，上班开机，下班关机。
 
