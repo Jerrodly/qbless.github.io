@@ -15,6 +15,8 @@ Know, know why.
 
 * 02-07 [Uniqid & Time](/uniqid_time) [#php#](/#php)
 
+* 01-23 [Remote Boot](/remote_boot) [#tool#](/#tool)
+
 #####2014
 
 * 09-11 [Linux Screen](/linux_screen) [#linux#](/#linux)
