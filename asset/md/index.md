@@ -43,6 +43,8 @@ Know, know why.
 
 * 11-06 [WNMP MongoDB Redis](/wnmp) [#windows#](/#windows)
 
+* 04-08 [PHP Object vs Class](/php_object_vs_class) [#php#](/#php) [#excerpt#](/#excerpt)
+
 * 01-13 [PHP Design Pattern](/php_design_pattern) [#php#](/#php) [#excerpt#](/#excerpt)
 
 #####2012
