@@ -47,6 +47,8 @@ Know, know why.
 
 * 06-18 [Linux Crontab](/linux_crontab) [#linux#](/#linux)
 
+* 06-06 [PHP Programming Efficiency](/php_programming_efficiency) [#excerpt#](/#excerpt)
+
 ##Tools
 
 Editor:
