@@ -18,7 +18,7 @@ define(function (require, exports, module) {
     
     location.origin = location.protocol + '//' + location.hostname;
 
-    var tags = {};
+    var total = 0, tags = {};
 
     $('body').html('Loading...');
     require.async('md/'+params.page+'.md', function (content) {
@@ -37,11 +37,18 @@ define(function (require, exports, module) {
               tags[tag] = tags[tag] || 0;
               tags[tag] += 1;
             }
-            Cookie.set('tags', JSON.stringify(tags));
           }
           
         } else {    
           this.href = '#!' + this.href.substr(location.origin.length + 1);
+          
+          if ('index' == params.page) {
+            total += 1;
+          }
+        }
+        if ('index' == params.page) {
+            Cookie.set('tags', JSON.stringify(tags));
+            Cookie.set('total', total);
         }
 
         $(this).off('click').on('click', function () {
@@ -64,22 +71,20 @@ define(function (require, exports, module) {
         if (c = Cookie.get('tags')) {
             tags = JSON.parse(c);
         }
+        total = Cookie.get('total');
       }
 
       $("a[href^='#!tag=']").css({'color': '#aaa'});
       $('title').html(('index' != params.page ? ($('h1').text() + ' - ') : '') + 'Kirin\'s Blog');
 
-      var total = 0, menu = '';
+      var menu = '<div class="nav menu"><ul><li><a href="#" title="Including ' + total + ' articles.">HOME</a></li>';
       for (var tag in tags) {
-          menu += '<li><a href="#!tag=' + tag + '" title="There are ' + tags[tag] + ' articles.">' + tag.toUpperCase() + '</a></li>';
-          total += tags[tag];
+          menu += '<li><a href="#!tag=' + tag + '" title="Including ' + tags[tag] + ' articles.">' + tag.toUpperCase() + '</a></li>';
       }
-      menu = '<div class="nav menu"><ul><li><a href="#" title="There are ' + total + ' articles.">HOME</a></li>' + menu + '</ul></div>';
+      menu +=  '</ul></div>';
       $('body').append(menu);
       $('.nav').css({'position': 'fixed', 'top': '0px', 'left': '0px', 'width': '100%', 'z-index': '998', 'background': '#eee'});
       $('.nav li').css({'float': 'left', 'padding': '8px'});
-      //$('.menu').css({'position': 'absolute', 'top': '71px', 'right': '71px', 'text-align': 'right'});
-      //$('.menu ul').css('list-style', 'none');
 
       $('a').each(function() {
           if (this.href.indexOf(location.host) < 0) {
