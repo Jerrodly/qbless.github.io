@@ -97,7 +97,7 @@ Helpful:
 ##About
 Kirin Woo
 
-RD : Linx Nginx PHP MySQL ECMAScript MongoDB Redis SQLite ...
+Skill: Linx Nginx PHP MySQL ECMAScript MongoDB Redis SQLite ...
 
 Work in [ND](http://www.nd.com.cn/) - [TMING](http://www.tming.net.cn/)
 
