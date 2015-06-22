@@ -101,7 +101,7 @@ define(function (require, exports, module) {
         }
       }, 3 * 1000);
       
-      //$('html,body').animate({scrollTop: 0});
+      $('html,body').animate({scrollTop: 0});
     });
   }
 
