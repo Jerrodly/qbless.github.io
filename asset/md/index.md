@@ -5,6 +5,8 @@ Know, know why.
 
 #####2015
 
+* 06-20 [MySQL Optimization](/mysql_optimization) [#mysql#](/#mysql)
+
 * 05-08 [Developing in the cloud](/dev_in_the_cloud) [#tool#](/#tool)
 
 * 04-03 [Parallel Development](/parallel_dev) [#cooperation#](/#cooperation)
