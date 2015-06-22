@@ -71,10 +71,10 @@ define(function (require, exports, module) {
 
       var total = 0, menu = '';
       for (var tag in tags) {
-          menu += '<li><a href="#!tag=' + tag + '" title="' + tags[tag] + ' article">' + tag.toUpperCase() + '</a></li>';
+          menu += '<li><a href="#!tag=' + tag + '" title="There are ' + tags[tag] + ' articles.">' + tag.toUpperCase() + '</a></li>';
           total += tags[tag];
       }
-      menu = '<div class="nav menu"><ul><li><a href="#" title="' + total + ' article">HOME</a></li>' + menu + '</ul></div>';
+      menu = '<div class="nav menu"><ul><li><a href="#" title="There are ' + total + ' articles.">HOME</a></li>' + menu + '</ul></div>';
       $('body').append(menu);
       $('.nav').css({'position': 'fixed', 'top': '0px', 'left': '0px', 'width': '100%', 'z-index': '998', 'background': '#eee'});
       $('.nav li').css({'float': 'left', 'padding': '8px'});
