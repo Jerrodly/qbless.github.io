@@ -1,4 +1,4 @@
-#五种常见的 PHP 设计模式 [#excerpt#](/#excerpt)
+#五种常见的 PHP 设计模式 [#php#](/#php) [#excerpt#](/#excerpt)
 
 via: http://www.ibm.com/developerworks/cn/opensource/os-php-designptrns/
 
