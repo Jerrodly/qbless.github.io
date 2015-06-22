@@ -43,13 +43,15 @@ Know, know why.
 
 * 11-06 [WNMP MongoDB Redis](/wnmp) [#windows#](/#windows)
 
+* 01-13 [PHP Design Pattern](/php_design_pattern) [#php#](/#php) [#excerpt#](/#excerpt)
+
 #####2012
 
 * 12-03 [Apache AB](/apache_ab) [#php#](/#php)
 
 * 06-18 [Linux Crontab](/linux_crontab) [#linux#](/#linux)
 
-* 06-06 [PHP Programming Efficiency](/php_programming_efficiency) [#excerpt#](/#excerpt)
+* 06-06 [PHP Programming Efficiency](/php_programming_efficiency) [#php#](/#php) [#excerpt#](/#excerpt)
 
 ##Tools
 
