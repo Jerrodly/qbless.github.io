@@ -84,6 +84,7 @@ define(function (require, exports, module) {
       menu +=  '</ul></div>';
       $('body').append(menu);
       $('.nav').css({'position': 'fixed', 'top': '0px', 'left': '0px', 'width': '100%', 'z-index': '998', 'background': '#eee'});
+      $('.nav ul').css({'list-style': 'none'});
       $('.nav li').css({'float': 'left', 'padding': '8px'});
 
       $('a').each(function() {
