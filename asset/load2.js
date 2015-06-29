@@ -111,7 +111,7 @@ define(function (require, exports, module) {
     });
   }
 
-  if ('onhashchange' in window && 'function' == typeof window.addEventListener) {
+  if ('onhashchange' in window && 'addEventListener' in window && 'function' == typeof window.addEventListener) {
     window.onhashchange = article;
   }
   article();
