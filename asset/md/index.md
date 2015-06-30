@@ -85,7 +85,7 @@ Connect:
 [Mobaxterm](http://mobaxterm.mobatek.net/)
 
 B/S Dev:
-[PHP Manual](http://php.net/manual/zh/)
+[PHP Manual](http://www.php.net/get/php_manual_zh.chm/from/a/mirror)
  | 
 [Virtualbox](https://www.virtualbox.org/)
  | 
