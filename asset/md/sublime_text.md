@@ -62,3 +62,13 @@ Folder右键更新整个目录
   "display_arguments": true
 }
 ```
+
+####Material theme
+
+材料主题
+
+Preferences -> Setting - User -> 
+```
+"theme": "Material-Theme-Darker.sublime-theme",
+"color_scheme": "Packages/Material Theme/schemes/Material-Theme-Darker.tmTheme",
+```
