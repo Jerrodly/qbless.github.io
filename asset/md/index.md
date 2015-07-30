@@ -5,6 +5,8 @@ Know, know why.
 
 #####2015
 
+* 07-30 [LNMP](/lnmp) [#linux#](/#linux) [#nginx#](/#nginx) [#mysql#](/#mysql) [#php#](/#php)
+
 * 06-20 [MySQL Optimization](/mysql_optimization) [#mysql#](/#mysql)
 
 * 05-08 [Developing in the cloud](/dev_in_the_cloud) [#tool#](/#tool)
