@@ -86,6 +86,7 @@ set autoindent
 
 tab显示为 >- 行尾空格为 -
 ```
+set list
 set listchars=tab:>-,trail:-
 ```
 
