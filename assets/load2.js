@@ -83,9 +83,14 @@ define(function (require, exports, module) {
       }
       menu +=  '</ul></div>';
       $('body').append(menu);
+      if ($('.nav li').slice(7).length) {
+        $('.nav li').slice(7).hide();
+        $('.nav ul').append('<li><a href="javascript:;" title="Show tags.">...</a></li>');
+        $('.nav li').last().on('click', function(){$('.nav li').slice(7).toggle();});
+      }
       $('.nav').css({'position': 'fixed', 'top': '0px', 'left': '0px', 'width': '100%', 'z-index': '998', 'background': '#eee', 'font-weight': 'bold'});
       $('.nav ul').css({'list-style': 'none'});
-      $('.nav li').css({'float': 'left', 'padding': '8px'});
+      $('.nav li').css({'float': 'left', 'padding': '6px'});
 
       $('a').each(function() {
           if (this.href.indexOf(location.host) < 0) {
