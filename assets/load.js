@@ -12,7 +12,7 @@ define(function (require, exports, module) {
   page = page || 'index';
 
   //LOAD ARTICLE
-  require.async('md/'+page+'.md', function(content) {
+  require.async('/data/articles/'+page+'.md', function(content) {
     $('body').html(marked(content));
   });
 
