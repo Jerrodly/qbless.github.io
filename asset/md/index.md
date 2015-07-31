@@ -5,7 +5,7 @@ Know, know why.
 
 #####2015
 
-* 07-31 [Vim](/Vim) [#tool#](/#tool)
+* 07-31 [Vim](/vim) [#tool#](/#tool)
 
 * 06-20 [MySQL Optimization](/mysql_optimization) [#mysql#](/#mysql)
 
