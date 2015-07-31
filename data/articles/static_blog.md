@@ -52,17 +52,17 @@ GitHub提供了一个404的自定义页面，在访问不到改页面的情况�
 <title>Kirin's Blog</title>
 </head>
 <body>Loading...</body>
-<script src='/asset/lib/sea.min.js'></script>
-<script src='/asset/lib/seajs-text.min.js'></script>
-<script src='/asset/lib/seajs-css.min.js'></script>
-<script src='/asset/init.js'></script>
+<script src='/assets/lib/sea.min.js'></script>
+<script src='/assets/lib/seajs-text.min.js'></script>
+<script src='/assets/lib/seajs-css.min.js'></script>
+<script src='/assets/init.js'></script>
 <script>seajs.use('load');</script>
 </html>
 ```
 
 #### 1.创建 init.js
 
-初始化加载器配置，将 asset 指定为前端加载的根目录，并且将常用的 JQUERY MARKED 进行别名配置
+初始化加载器配置，将 assets 指定为前端加载的根目录，并且将常用的 JQUERY MARKED 进行别名配置
 ```
 //获取根路径放到全局对象G里面
 var tmp = {}, G = {};
@@ -108,7 +108,7 @@ define(function (require, exports, module) {
   page = page || 'index';
 
   //LOAD ARTICLE
-  require.async('md/'+page+'.md', function(content) {
+  require.async('/data/articles/'+page+'.md', function(content) {
     $('body').html(marked(content));
   });
 
