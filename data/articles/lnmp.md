@@ -251,10 +251,13 @@ esac
 创建用户/权限
 ```
 insert into mysql.user(Host,User,Password) values("%", "qbless", password("qbless"));
+insert into mysql.user(Host,User,Password) values("localhost", "qbless", password("qbless"));
 flush privileges;
 grant all on *.* to qbless@'%';
+grant all on *.* to qbless@'localhost';
 flush privileges;
 ```
+ps % 与 localhost 没有交集！！！
 
 ##PHP
 
