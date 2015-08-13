@@ -71,7 +71,8 @@ set number
 
 tab = 4 spaces
 ```
-set ts=4
+set tabstop=4
+set shiftwidth=4
 ```
 
 高光当前行
