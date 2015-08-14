@@ -1,19 +1,34 @@
 #LNMP [#linux#](/#linux) [#nginx#](/#nginx) [#mysql#](/#mysql) [#php#](/#php)
 
+##Purpose
+
+####separation
+数据 程序进行分离开，服务器迁移备份，只需要关注数据
+
+####script
+统一化脚本，各程序启动，关闭等
+
+####upgrade
+新版本程序安装，配置不变，测试后，修改配置，可以无缝升级
+
+####operations
+一个项目，对应一个数据库端口，方便不同项目之间性能监控
+
+####multi-version php
+多版本并存，不同项目使用不同php版本
+
+####flow
+了解程序基本运行流程
+
 ##Initialization directory
 
 ```
 mkdir /kserv \
 /kserv/package \
-/kserv/nginx \
-/kserv/mysql \
-/kserv/php \
-/kserv/php \
 /kserv/data \
-/kserv/data/nginx \
+/kserv/data/nginx /kserv/data/mysql /kserv/data/php \
 /kserv/data/nginx/logs \
-/kserv/data/mysql \
-/kserv/data/php
+/kserv/nginx /kserv/mysql /kserv/php
 ```
 
 ##Download
