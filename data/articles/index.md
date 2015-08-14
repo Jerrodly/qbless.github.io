@@ -21,6 +21,8 @@ Know, know why.
 
 #####2014
 
+* 12-26 [SeaJS](/seajs) [#front-end#](/#front-end)
+
 * 11-30 [LNMP](/lnmp) [#linux#](/#linux) [#nginx#](/#nginx) [#mysql#](/#mysql) [#php#](/#php)
 
 * 09-11 [Linux Screen](/linux_screen) [#linux#](/#linux)
