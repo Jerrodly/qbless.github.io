@@ -19,11 +19,13 @@ Know, know why.
 
 * 02-07 [Uniqid & Time](/uniqid_time) [#php#](/#php)
 
+* 01-15 [Module structure](/module_structure) [#front-end#](/#front-end)
+
 #####2014
 
 * 12-26 [SeaJS](/seajs) [#front-end#](/#front-end)
 
-* 11-30 [LNMP](/lnmp) [#linux#](/#linux) [#nginx#](/#nginx) [#mysql#](/#mysql) [#php#](/#php)
+* 11-07 [LNMP](/lnmp) [#linux#](/#linux) [#nginx#](/#nginx) [#mysql#](/#mysql) [#php#](/#php)
 
 * 09-11 [Linux Screen](/linux_screen) [#linux#](/#linux)
 
