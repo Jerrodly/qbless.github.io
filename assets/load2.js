@@ -4,7 +4,12 @@ define(function (require, exports, module) {
   Cookie = require('cookie');
 
   require.async('theme/github.min.css');
-  $('body').addClass('markdown-body').css({'margin': '64px'});
+  if (navigator.userAgent.indexOf('iPhone') >=0 || navigator.userAgent.indexOf('Android') >=0) {
+    $('head').append('<meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width">');
+    $('body').addClass('markdown-body').css({'margin': '16px'});
+  } else {
+    $('body').addClass('markdown-body').css({'margin': '64px'});
+  }
 
   window.duoshuoQuery = {short_name: "qbless"};
   $.getScript("http://static.duoshuo.com/embed.js");
@@ -91,6 +96,10 @@ define(function (require, exports, module) {
       $('.nav').css({'position': 'fixed', 'top': '0px', 'left': '0px', 'width': '100%', 'z-index': '998', 'background': '#eee', 'font-weight': 'bold'});
       $('.nav ul').css({'list-style': 'none'});
       $('.nav li').css({'float': 'left', 'padding': '6px'});
+      
+      if ($('.nav').height() > $('body').offset().top) {
+        $('body').css({'margin-top': $('.nav').height()+$('body').offset().top});
+      }
 
       $('a').each(function() {
           if (this.href.indexOf(location.host) < 0) {
