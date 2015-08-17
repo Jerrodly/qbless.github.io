@@ -2,9 +2,12 @@ define(function (require, exports, module) {
   $ = require('jquery');
   marked = require('marked');
   Cookie = require('cookie');
+  
+  var MOBILE = (navigator.userAgent.indexOf('iPhone') >=0 || navigator.userAgent.indexOf('Android') >=0) ? true : false;
+  var NAVTAGSHOWNUM = MOBILE ? 2 : 7;
 
   require.async('theme/github.min.css');
-  if (navigator.userAgent.indexOf('iPhone') >=0 || navigator.userAgent.indexOf('Android') >=0) {
+  if (MOBILE) {
     $('head').append('<meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width">');
     $('body').addClass('markdown-body').css({'margin': '16px'});
   } else {
@@ -88,10 +91,10 @@ define(function (require, exports, module) {
       }
       menu +=  '</ul></div>';
       $('body').append(menu);
-      if ($('.nav li').slice(7).length) {
-        $('.nav li').slice(7).hide();
+      if ($('.nav li').slice(NAVTAGSHOWNUM).length) {
+        $('.nav li').slice(NAVTAGSHOWNUM).hide();
         $('.nav ul').append('<li><a href="javascript:;" title="Show tags.">...</a></li>');
-        $('.nav li').last().on('click', function(){$('.nav li').slice(7).toggle();});
+        $('.nav li').last().on('click', function(){$('.nav li').slice(NAVTAGSHOWNUM).toggle();});
       }
       $('.nav').css({'position': 'fixed', 'top': '0px', 'left': '0px', 'width': '100%', 'z-index': '998', 'background': '#eee', 'font-weight': 'bold'});
       $('.nav ul').css({'list-style': 'none'});
