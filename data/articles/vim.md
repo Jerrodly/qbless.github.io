@@ -56,6 +56,48 @@ buffer转换为tab
 :cd /website
 ```
 
+##Shortcut Key
+
+移动
+```
+h 左
+j 下
+k 上
+l 右
+0 行首
+$ 行尾
+^ 行首字符
+{num}gg 第{num}行
+ctrl+b 上翻页
+ctrl+f 下翻页
+/string n 搜索，下一项
+```
+
+还原
+```
+u
+```
+
+选择
+```
+v 按字符
+V 按行
+```
+
+复制
+```
+y
+```
+
+粘贴
+```
+p
+```
+
+自动补全
+```
+ctrl+n
+```
 
 ##vimrc
 
