@@ -4,7 +4,7 @@ define(function (require, exports, module) {
   Cookie = require('cookie');
   
   var MOBILE = (navigator.userAgent.indexOf('iPhone') >=0 || navigator.userAgent.indexOf('Android') >=0) ? true : false;
-  var NAVTAGSHOWNUM = MOBILE ? 2 : 7;
+  var NAVTAGSHOWNUM = MOBILE ? 4 : 8;
 
   require.async('theme/github.min.css');
   if (MOBILE) {
