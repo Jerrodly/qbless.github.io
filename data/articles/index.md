@@ -19,7 +19,7 @@ Know, know why.
 
 * 02-07 [Uniqid & Time](/uniqid_time) [#php#](/#php)
 
-* 01-15 [Module structure](/module_structure) [#front-end#](/#front-end)
+* 01-15 [Module Structure](/module_structure) [#front-end#](/#front-end)
 
 #####2014
 

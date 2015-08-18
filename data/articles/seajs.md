@@ -1,4 +1,4 @@
-#Seajs [#front-end#](/#front-end)
+#SeaJS [#front-end#](/#front-end)
 
 ##What's this
 

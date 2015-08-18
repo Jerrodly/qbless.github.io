@@ -1,4 +1,4 @@
-#Module structure [#front-end#](/#front-end)
+#Module Structure [#front-end#](/#front-end)
 
 ##Why
 
