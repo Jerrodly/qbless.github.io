@@ -104,8 +104,8 @@ common/assets.html
 <?if ('user' == App::getCtrName()):?><script type="text/javascript" src="/assets/dist/app/inc/user.js" ></script><?endif;?>
 <script type="text/javascript" src="/assets/dist/app/<?=App::getCtrName();?>/<?=App::getActName();?>.js" ></script>
 <?else:?>
-<script type="text/javascript" src="/static/src/lib/requirejs/2.1.20.js" ></script>
-<script type="text/javascript" src="/static/src/conf/main.js" ></script>
+<script type="text/javascript" src="/assets/src/lib/requirejs/2.1.20.js" ></script>
+<script type="text/javascript" src="/assets/src/conf/main.js" ></script>
 <script type="text/javascript">requirejs(['<?=App::getCtrName();?>/<?=App::getActName();?>'])</script>
 <?endif;?>
 ```
