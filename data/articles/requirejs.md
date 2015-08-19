@@ -59,8 +59,8 @@ shim: 为那些没有使用define()来声明依赖关系、设置模块的"浏�
 			exclude: ['jquery']
 		},
 		{
-			name: 'user/login',
-			insertRequire: ['user/login'],
+			name: 'user/profile',
+			insertRequire: ['user/profile'],
 			exclude: ['jquery', 'inc/user']
 		}
 	]
