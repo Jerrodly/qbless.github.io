@@ -5,6 +5,8 @@ Know, know why.
 
 #####2015
 
+* 08-17 [RequireJS](/requirejs) [#front-end#](/#front-end)
+
 * 07-31 [Vim](/vim) [#tool#](/#tool)
 
 * 06-20 [MySQL Optimization](/mysql_optimization) [#mysql#](/#mysql)
