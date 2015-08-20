@@ -127,6 +127,11 @@ set cursorline
 set autoindent
 ```
 
+粘贴不缩进
+```
+set paste
+```
+
 tab显示为 >- 行尾空格为 -
 ```
 set list
