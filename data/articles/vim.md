@@ -38,7 +38,7 @@ tab新建
 
 垂直窗口打开
 ```
-:vsp 
+:vsp
 ```
 
 窗口光标切换
@@ -49,6 +49,11 @@ tab新建
 buffer转换为tab
 ```
 :bufdo tab split
+```
+
+打开寄存器
+```
+:reg
 ```
 
 改变当前目录
@@ -115,6 +120,11 @@ tab = 4 spaces
 ```
 set tabstop=4
 set shiftwidth=4
+```
+
+用空格代替制表符
+```
+set expandtab
 ```
 
 高光当前行

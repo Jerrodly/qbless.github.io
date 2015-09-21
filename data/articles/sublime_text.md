@@ -63,6 +63,18 @@ Folder右键更新整个目录
 }
 ```
 
+####SublimeLinter
+代码检测
+
+先安装 sublimeLinter 再安装 sublimeLinter-php
+
+配置PHP
+```
+"windows": [
+    "D:\\Develop\\Service\\php\\5.4.45"
+]
+```
+
 ####Material theme
 
 材料主题
