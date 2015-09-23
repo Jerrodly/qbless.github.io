@@ -115,6 +115,11 @@ define(['jquery', 'marked', 'lib/cookie'], function($, marked, Cookie) {
 		
 	}
 	
+	//兼容旧模式
+	if (location.hash.indexOf('#!') >= 0 && location.hash.indexOf(hashbang) < 0) {
+		location.hash = location.hash.replace('#!', hashbang);
+	}
+	
 	location.origin = location.protocol + '//' + location.hostname;
 	
 	if ('onhashchange' in window && 'addEventListener' in window && 'function' == typeof window.addEventListener) {
