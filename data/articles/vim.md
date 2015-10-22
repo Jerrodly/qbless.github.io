@@ -153,6 +153,11 @@ set listchars=tab:>-,trail:-
 syntax on
 ```
 
+关闭swap
+```
+set noswapfile
+```
+
 移除工具栏、滚动条
 ```
 set go-=T "guioptions remove toolbar

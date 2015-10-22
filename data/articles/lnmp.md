@@ -274,6 +274,14 @@ flush privileges;
 ```
 ps % 与 localhost 没有交集！！！
 
+导出 && 导入
+```
+/kserv/mysql/5.5.20/bin/mysqldump -h127.0.0.1 -P3306 -uqbless -p -B demo1 demo2 > demo.sql
+
+/kserv/script/mysql.sh 3306 manage
+source demo.sql
+```
+
 ##PHP
 
 解压 编译 安装
