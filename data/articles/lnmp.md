@@ -1,37 +1,39 @@
 #LNMP [#linux#](/#linux) [#nginx#](/#nginx) [#mysql#](/#mysql) [#php#](/#php)
 
-##Purpose
+## Purpose
 
-####separation
+#### Separation
 数据 程序进行分离开，服务器迁移备份，只需要关注数据
 
-####script
+#### Script
 统一化脚本，各程序启动，关闭等
 
-####upgrade
+#### Upgrade
 新版本程序安装，配置不变，测试后，修改配置，可以无缝升级
 
-####operations
+#### Operations
 一个项目，对应一个数据库端口，方便不同项目之间性能监控
 
-####multi-version php
+#### Multi-version php
 多版本并存，不同项目使用不同php版本
 
-####flow
+#### Flow
 了解程序基本运行流程
 
-##Initialization directory
+## Initialization Directory
 
 ```
 mkdir /kserv \
 /kserv/package \
+/kserv/app \
+/kserv/app/nginx /kserv/app/mysql /kserv/app/php \
+/kserv/bin \
 /kserv/data \
 /kserv/data/nginx /kserv/data/mysql /kserv/data/php \
-/kserv/data/nginx/logs \
-/kserv/nginx /kserv/mysql /kserv/php
+/kserv/data/nginx/logs
 ```
 
-##Download
+## Download
 
 ```
 cd /kserv/package
@@ -41,7 +43,7 @@ curl -O https://downloads.php.net/~ab/php-7.0.0beta2.tar.gz
 ```
 建议先用pan.baidu.com离线下载，然后再下载
 
-##Nginx
+## Nginx
 
 添加用户/组
 ```
@@ -56,23 +58,23 @@ yum -y install pcre-devel openssl openssl-devel
 
 解压 编译 安装
 ```
-cd /kserv/nginx
+cd /kserv/app/nginx
 tar zxvf /kserv/package/nginx-1.8.0.tar.gz
 mv nginx-1.8.0 1.8.0
 
-./configure --user=www --group=www --prefix=/kserv/nginx/1.8.0 --with-http_stub_status_module --with-http_ssl_module
+./configure --user=www --group=www --prefix=/kserv/app/nginx/1.8.0
 
 make && make install
 ```
 
 配置文件
 ```
-cp /kserv/nginx/1.8.0/conf/nginx.conf /kserv/data/nginx/nginx.conf
-cp /kserv/nginx/1.8.0/conf/mime.types /kserv/data/nginx/mime.types
-cp /kserv/nginx/1.8.0/conf/fastcgi.conf /kserv/data/nginx/fastcgi.conf
+cp /kserv/app/nginx/1.8.0/conf/nginx.conf /kserv/data/nginx/nginx.conf
+cp /kserv/app/nginx/1.8.0/conf/mime.types /kserv/data/nginx/mime.types
+cp /kserv/app/nginx/1.8.0/conf/fastcgi.conf /kserv/data/nginx/fastcgi.conf
 ```
 
-####nginx.conf
+#### nginx.conf
 ```
 #user www www;
 
@@ -97,6 +99,10 @@ http {
 
     keepalive_timeout  65;
 
+    upstream $PHP_CGI_700 {
+        server unix:/kserv/data/php/7.0.0/php-fpm.sock;
+    }
+
     server {
         listen       80;
         server_name  localhost;
@@ -105,7 +111,7 @@ http {
         index index.html index.htm index.php;
 
         location ~ \.php$ {
-            fastcgi_pass   unix:/kserv/data/php/7.0.0/php-fpm.sock;
+            fastcgi_pass   $PHP_CGI_700;
             fastcgi_index  index.php;
             include        fastcgi.conf;
         }
@@ -113,7 +119,7 @@ http {
 }
 ```
 
-#### nginx.sh
+#### /kserv/bin/nginx
 ```
 #!/bin/bash
 
@@ -121,9 +127,10 @@ KSERV_PATH='/kserv'
 
 NGINX_VER='1.8.0'
 
-NGINX_PROG=$KSERV_PATH'/nginx/'$NGINX_VER
-NGINX_BIN=$NGINX_PROG'/sbin/nginx'
+NGINX_APP=$KSERV_PATH'/app/nginx/'$NGINX_VER
 NGINX_DATA=$KSERV_PATH'/data/nginx'
+
+NGINX_BIN=$NGINX_APP'/sbin/nginx'
 NGINX_CONF=$NGINX_DATA'/nginx.conf'
 NGINX_PID=$NGINX_DATA'/nginx.pid'
 
@@ -151,25 +158,25 @@ esac
 
 启动
 ```
-/kserv/script/nginx.sh start
+/kserv/bin/nginx start
 ```
 
 关闭
 ```
-/kserv/script/nginx.sh stop
+/kserv/bin/nginx stop
 ```
 
 重新加载
 ```
-/kserv/script/nginx.sh reload
+/kserv/bin/nginx reload
 ```
 
 检查nginx.conf是否有错误
 ```
-/kserv/script/nginx.sh check
+/kserv/bin/nginx check
 ```
 
-##MySQL
+## MySQL
 
 添加用户/组
 ```
@@ -179,14 +186,14 @@ useradd -g mysql mysql
 
 解压 权限
 ```
-cd /kserv/mysql
+cd /kserv/app/mysql
 tar zxvf /kserv/package/nginxmysql-5.5.20-linux2.6-x86_64.tar.gz
 mv mysql-5.5.20-linux2.6-x86_64 5.5.20
 
-chown -R mysql.mysql /kserv/mysql /kserv/data/mysql
+chown -R mysql.mysql /kserv/app/mysql /kserv/data/mysql
 ```
 
-mysql.sh
+#### /kserv/bin/mysql
 ```
 #!/bin/bash
 
@@ -196,7 +203,7 @@ MYSQL_VER='5.5.20'
 
 MYSQL_PORT=$1
 
-MYSQL_PROG=$KSERV_PATH'/mysql/'$MYSQL_VER
+MYSQL_APP=$KSERV_PATH'/app/mysql/'$MYSQL_VER
 MYSQL_DATA=$KSERV_PATH'/data/mysql/'$MYSQL_PORT
 
 if [ ! $MYSQL_PORT ] ; then
@@ -206,11 +213,11 @@ fi;
 
 case "$2" in
     'start')
-        cd $MYSQL_PROG
-        $MYSQL_PROG'/bin/mysqld_safe' --defaults-file=$MYSQL_DATA'/mysql.conf' 2>&1>/dev/null &
+        cd $MYSQL_APP
+        $MYSQL_APP'/bin/mysqld_safe' --defaults-file=$MYSQL_DATA'/mysql.conf' 2>&1>/dev/null &
         ;;
     'stop')
-        $MYSQL_PROG'/bin/mysqladmin' -uroot -S $MYSQL_DATA'/mysql.sock' shutdown
+        $MYSQL_APP'/bin/mysqladmin' -uroot -S $MYSQL_DATA'/mysql.sock' shutdown
         ;;
     'create')
         if [ -d $MYSQL_DATA ]; then
@@ -218,12 +225,12 @@ case "$2" in
             exit;
         fi
         mkdir $MYSQL_DATA
-        $MYSQL_PROG/scripts/mysql_install_db --user=mysql --basedir=$MYSQL_PROG --datadir=$MYSQL_DATA
+        $MYSQL_APP/scripts/mysql_install_db --user=$USER --basedir=$MYSQL_APP --datadir=$MYSQL_DATA
         
         echo '[mysqld]' >> $MYSQL_DATA'/mysql.conf'
-        echo 'basedir = '$MYSQL_PROG >> $MYSQL_DATA'/mysql.conf'
+        echo 'basedir = '$MYSQL_APP >> $MYSQL_DATA'/mysql.conf'
         echo 'datadir = '$MYSQL_DATA >> $MYSQL_DATA'/mysql.conf'
-        echo 'plugin-dir = '$MYSQL_PROG'/lib/plugin' >> $MYSQL_DATA'/mysql.conf'
+        echo 'plugin-dir = '$MYSQL_APP'/lib/plugin' >> $MYSQL_DATA'/mysql.conf'
         echo 'port = '$MYSQL_PORT >> $MYSQL_DATA'/mysql.conf'
         echo 'socket = mysql.sock' >> $MYSQL_DATA'/mysql.conf'
         echo 'pid-file = mysql.pid' >> $MYSQL_DATA'/mysql.conf'
@@ -232,7 +239,7 @@ case "$2" in
         chmod 644 $MYSQL_DATA'/mysql.conf'
         ;;
     'manage')
-        $MYSQL_PROG'/bin/mysql' -uroot -S $MYSQL_DATA'/mysql.sock'
+        $MYSQL_APP'/bin/mysql' -uroot -S $MYSQL_DATA'/mysql.sock'
         ;;
     *)
         echo 'Usage: '$0' '$1' {start|stop|create|manage}';
@@ -245,22 +252,22 @@ esac
 
 创建新端口
 ```
-/kserv/script/mysql.sh 3306 create
+/kserv/bin/mysql 3306 create
 ```
 
 启动
 ```
-/kserv/script/mysql.sh 3306 start
+/kserv/bin/mysql 3306 start
 ```
 
 关闭
 ```
-/kserv/script/mysql.sh 3306 stop
+/kserv/bin/mysql 3306 stop
 ```
 
 管理
 ```
-/kserv/script/mysql.sh 3306 manage
+/kserv/bin/mysql 3306 manage
 ```
 
 创建用户/权限
@@ -276,13 +283,13 @@ ps % 与 localhost 没有交集！！！
 
 导出 && 导入
 ```
-/kserv/mysql/5.5.20/bin/mysqldump -h127.0.0.1 -P3306 -uqbless -p -B demo1 demo2 > demo.sql
+/kserv/app/mysql/5.5.20/bin/mysqldump -h127.0.0.1 -P3306 -uqbless -p -B demo1 demo2 > demo.sql
 
-/kserv/script/mysql.sh 3306 manage
+/kserv/bin/mysql 3306 manage
 source demo.sql
 ```
 
-##PHP
+## PHP
 
 解压 编译 安装
 ```
@@ -290,12 +297,12 @@ cd /kserv/package
 tar zxvf /kserv/package/php-7.0.0beta2.tar.gz
 
 cd /kserv/package/php-7.0.0beta2
-./configure --prefix=/kserv/php/7.0.0 --with-config-file-path=/kserv/data/php/7.0.0 --enable-fpm
+./configure --prefix=/kserv/app/php/7.0.0 --with-config-file-path=/kserv/data/php/7.0.0 --enable-fpm
 
 make && make install
 ```
 
-####conf
+#### Conf
 
 php.ini
 ```
@@ -314,13 +321,13 @@ listen = /kserv/data/php/7.0.0/php-fpm.sock
 listen.owner = www
 listen.group = www
 pm = dynamic
-pm.max_children = 5
+pm.max_children = 8
 pm.start_servers = 2
 pm.min_spare_servers = 1
-pm.max_spare_servers = 3
+pm.max_spare_servers = 4
 ```
 
-####php.sh
+#### /kserv/bin/php
 ```
 #!/bin/bash
 
@@ -328,14 +335,13 @@ KSERV_PATH='/kserv'
 
 PHP_VAR=$1
 
-PHP_PROG=$KSERV_PATH'/php/'$PHP_VAR
+PHP_APP=$KSERV_PATH'/app/php/'$PHP_VAR
 PHP_DATA=$KSERV_PATH'/data/php/'$PHP_VAR
 
 if [ ! $PHP_VAR ] ; then
     echo 'Input version'
     exit
 fi;
-
 if [ ! -d $PHP_DATA ] ; then
     echo 'This version('$PHP_VAR') does not exist'
     exit
@@ -343,7 +349,7 @@ fi;
 
 case "$2" in
     'start')
-        $PHP_PROG'/sbin/php-fpm' --fpm-config=$PHP_DATA'/php-fpm.conf'
+        $PHP_APP'/sbin/php-fpm' --fpm-config=$PHP_DATA'/php-fpm.conf'
         ;;
     'stop')
         PID=`head $PHP_DATA'/php-fpm.pid'`
@@ -362,20 +368,20 @@ esac
 
 启动
 ```
-/kserv/script/php.sh 7.0.0 start
+/kserv/bin/php 7.0.0 start
 ```
 
 关闭
 ```
-/kserv/script/php.sh 7.0.0 stop
+/kserv/bin/php 7.0.0 stop
 ```
 
 重启
 ```
-/kserv/script/php.sh 7.0.0 restart
+/kserv/bin/php 7.0.0 restart
 ```
 
-####extensions
+#### Extensions
 
 扩展安装有两种：安装编译、动态编译
 
@@ -385,11 +391,11 @@ esac
 ```
 cd /kserv/package/php-7.0.0beta2/ext/gettext
 
-/kserv/php/7.0.0/bin/phpize
+/kserv/app/php/7.0.0/bin/phpize
 
 ./configure --help | grep gettext
 
-./configure --with-php-config=/kserv/php/7.0.0/bin/php-config --with-gettext
+./configure --with-php-config=/kserv/app/php/7.0.0/bin/php-config --with-gettext
 
 make && make install
 ```
