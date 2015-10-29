@@ -61,10 +61,20 @@ vi smb.conf
 [global]
         workgroup = WORKGROUP
         server string = Samba Server
+
+        username map = /etc/samba/smbusers
+
+        unix password sync = yes
+        passdb backend = smbpasswd
+        smb passwd file = /etc/samba/smbpasswd
 [homes]
         comment = Home Directories
         writable = yes
         browseable = no
+
+vi /etc/samba/smbusers
+
+qbless = qbless
 ```
 将Linux与Windows || Mac OS 打通目录共享
 
@@ -91,10 +101,9 @@ mv /home/qbless/limit_port-8000-8099 /home/qbless/unlimited_port-8000-8099
 
 ##RD
 
-##### 修改密码 (SSH & SAMBA)
+##### 修改密码
 ```
 passwd
-smbpasswd
 ```
 
 ##### 检查端口
