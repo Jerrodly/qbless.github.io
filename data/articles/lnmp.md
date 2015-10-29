@@ -333,17 +333,17 @@ pm.max_spare_servers = 4
 
 KSERV_PATH='/kserv'
 
-PHP_VAR=$1
+PHP_VER=$1
 
-PHP_APP=$KSERV_PATH'/app/php/'$PHP_VAR
-PHP_DATA=$KSERV_PATH'/data/php/'$PHP_VAR
+PHP_APP=$KSERV_PATH'/app/php/'$PHP_VER
+PHP_DATA=$KSERV_PATH'/data/php/'$PHP_VER
 
-if [ ! $PHP_VAR ] ; then
+if [ ! $PHP_VER ] ; then
     echo 'Input version'
     exit
 fi;
 if [ ! -d $PHP_DATA ] ; then
-    echo 'This version('$PHP_VAR') does not exist'
+    echo 'This version('$PHP_VER') does not exist'
     exit
 fi;
 
