@@ -69,6 +69,11 @@ var base = {
 		'comments' : {
 			//多说
 			'duoshuo' : 'qbless'
+		},
+		//统计
+		'stat' : {
+			//CNZZ
+			'cnzz' : '1253192811'
 		}
 	},
 	//模型
@@ -93,11 +98,17 @@ base.model.tags = function() {
  * 获取所有月份
  * @return object
  */
-base.model.dates = function() {
-	var arr = {}, ym='';
+base.model.dates = function(type) {
+	var arr = {}, str='';
 	for (i in base.articles) {
-		ym = base.articles[i]['date'].substr(0,7);
-		(arr[ym]) ? (arr[ym] += 1) : (arr[ym] = 1);
+		if ('ym' == type) {
+			str = base.articles[i]['date'].substr(0,7);
+		} else if ('y' == type) {
+			str = base.articles[i]['date'].substr(0,4);
+		} else {
+			str = base.articles[i]['date'];
+		}
+		(arr[str]) ? (arr[str] += 1) : (arr[str] = 1);
 	}
 	return arr;
 }
@@ -111,7 +122,7 @@ base.model.articles = function(cur, num, tag, date) {
 		if (tag && base.articles[i]['tags'].indexOf(tag) < 0) {
 			continue;
 		}
-		if (date && date != base.articles[i]['date'].substr(0,7)) {
+		if (date && 0 != base.articles[i]['date'].indexOf(date)) {
 			continue;
 		}
 		if (start<= total && total < end) {

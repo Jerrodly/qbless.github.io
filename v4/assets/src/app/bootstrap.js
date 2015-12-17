@@ -36,6 +36,7 @@ define(['jquery', 'marked', 'database'], function($, marked, db) {
 		$('.main').append('<div class="content"></div>');
 		$('.main').append('<div class="comments"></div>');
 
+		$('.side').append('<div class="archives"></div>');
 		$('.side').append('<div class="tags"></div>');
 		$('.side').append('<div class="dates"></div>');
 		$('.side').append('<div class="links"></div>');
@@ -46,6 +47,17 @@ define(['jquery', 'marked', 'database'], function($, marked, db) {
 		//info
 		$('.header').append('<h1><a href="' + G.hashbang + '">' + db.info.title + '</a></h1>');
 		$('.header').append('<p>' + db.info.intro + '</p>');
+
+
+		//archives
+		var dates = db.model.dates('y');
+		arr = [];
+		for (i in dates) {
+			arr.push('<a href="' + G.hashbang + '?archives=all&date=' + i + '" title="Including ' + dates[i] + ' articles.">' + ucfirst(i) + '</a> (' + dates[i] + ')');
+		}
+		arr.push('<a href="' + G.hashbang + '?archives=all">21st century</a> (' + Object.keys(db.articles).length + ')');
+		$('.archives').append('<h4>Archives</h4>');
+		$('.archives').append(arr.reverse().join('<br/>'));
 
 
 		//tags
@@ -59,7 +71,7 @@ define(['jquery', 'marked', 'database'], function($, marked, db) {
 
 
 		//dates
-		var dates = db.model.dates();
+		var dates = db.model.dates('ym');
 		arr = [];
 		for (i in dates) {
 			arr.push('<a href="' + G.hashbang + '?date=' + i + '" title="Including ' + dates[i] + ' articles.">' + ucfirst(i) + '</a> (' + dates[i] + ')');
@@ -190,13 +202,12 @@ define(['jquery', 'marked', 'database'], function($, marked, db) {
 	var display = function(dom, content) {
 		$(dom).html(content);
 
-		$('a').each(function() {
+		$('.side a,.content a').each(function() {
 			if ($(this).attr('href').indexOf('/') == 0) {
 				$(this).attr('href', $(this).attr('href').replace('/', G.hashbang));
 			} else if (this.href.indexOf(location.host) < 0) {
 				$(this).attr('target', '_blank');
 			}
-
 		});
 	}
 
@@ -256,6 +267,7 @@ define(['jquery', 'marked', 'database'], function($, marked, db) {
 				}
 
 				html += block(articles.list[i], content);
+				html += '<a <a href="' + G.hashbang + articles.list[i] + '">➥Read More</a>';
 			}
 
 			//分页
@@ -285,22 +297,48 @@ define(['jquery', 'marked', 'database'], function($, marked, db) {
 
 
 	/**
+	 * 归档
+	 */
+	var archives = function() {
+		var html = '', arr = [], shortof= ' ', articles = db.model.articles(1, 999, G.get.tag, G.get.date);
+		for (i in articles.list) {
+			arr = [];
+			shortof = articles.list[i]
+			for (j in db.articles[shortof]['tags']) {
+				arr.push('<a href="' + G.hashbang + '?tag=' + db.articles[shortof]['tags'][j] + '">#' + ucfirst(db.articles[shortof]['tags'][j]) + '#</a>');
+			}
+			html += '<h6>' + db.articles[shortof]['date'] + ' <a href="' + G.hashbang + shortof + '">' + db.articles[shortof]['title'] + '</a> ' + arr.join(' ') + '</h6>'
+		}
+		display('.content', html);
+	}
+
+
+	/**
 	 * 评论
 	 */
-	var comments = function() {
+	var comments = function(key, title, url) {
 		//duoshuo
 		window.duoshuoQuery = {short_name: db.setting.comments.duoshuo};
 		$.getScript("http://static.duoshuo.com/embed.js", function() {
 			if (!$('.ds-thread').length) {
 				var el = document.createElement('div');
 				el.setAttribute('class', 'ds-thread');
-				el.setAttribute('data-thread-key', G.article);
-				el.setAttribute('data-title', document.title);
-				el.setAttribute('data-url', location.href);
+				el.setAttribute('data-thread-key', key);
+				el.setAttribute('data-title', title);
+				el.setAttribute('data-url', url);
 				window.DUOSHUO.EmbedThread(el);
 				$('.comments').append(el);
 			}
 		});
+	}
+
+
+	/**
+	 * 统计
+	 */
+	var stat = function() {
+		//cnzz
+		$.getScript("http://s95.cnzz.com/stat.php?id=" + db.setting.stat.cnzz);
 	}
 
 
@@ -317,10 +355,15 @@ define(['jquery', 'marked', 'database'], function($, marked, db) {
 
 		if (G.article && db.articles[G.article]) {
 			article();
-			comments();
+			comments(G.article, document.title, location.href);
+		} else if (G.get.archives && 'all' == G.get.archives) {
+			archives();
+			comments('archives', document.title, location.href);
 		} else {
 			list();
+			comments('index', document.title, location.href);
 		}
+		stat();
 	}
 
 
