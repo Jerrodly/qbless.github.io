@@ -7,7 +7,7 @@
 	preserveLicenseComments : false,
 	modules : [
 		{
-			name : 'requirejs-text-jquery-marked-bootstrap',
+			name : 'requirejs-text-jquery-marked-highlight-bootstrap',
 			include : [
 				'lib/requirejs/2.1.20',
 				'conf/require',
@@ -15,6 +15,7 @@
 				'text',
 				'jquery',
 				'marked',
+				'hljs',
 				'app/bootstrap'
 			],
 			exclude : [

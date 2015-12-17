@@ -1,4 +1,4 @@
-define(['jquery', 'marked', 'database'], function($, marked, db) {
+define(['jquery', 'marked', 'hljs', 'database'], function($, marked, hljs, db) {
 	var G = {};
 
 	G.hashbang = '#!/';
@@ -202,6 +202,10 @@ define(['jquery', 'marked', 'database'], function($, marked, db) {
 	var display = function(dom, content) {
 		$(dom).html(content);
 
+		$('pre code').each(function(i, block) {
+			hljs.highlightBlock(block);
+		});
+
 		$('.side a,.content a').each(function() {
 			if ($(this).attr('href').indexOf('/') == 0) {
 				$(this).attr('href', $(this).attr('href').replace('/', G.hashbang));
@@ -363,7 +367,7 @@ define(['jquery', 'marked', 'database'], function($, marked, db) {
 			list();
 			comments('index', document.title, location.href);
 		}
-		stat();
+		//stat();
 	}
 
 
