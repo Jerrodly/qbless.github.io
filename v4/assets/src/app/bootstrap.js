@@ -367,7 +367,7 @@ define(['jquery', 'marked', 'hljs', 'database'], function($, marked, hljs, db) {
 			list();
 			comments('index', document.title, location.href);
 		}
-		//stat();
+		stat();
 	}
 
 
