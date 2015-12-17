@@ -271,7 +271,7 @@ define(['jquery', 'marked', 'hljs', 'database'], function($, marked, hljs, db) {
 				}
 
 				html += block(articles.list[i], content);
-				html += '<a <a href="' + G.hashbang + articles.list[i] + '">➥Read More</a>';
+				html += '<a href="' + G.hashbang + articles.list[i] + '">➥Read More</a>';
 			}
 
 			//分页
